@@ -1,17 +1,31 @@
 ﻿title: Start1
 ---
-Ask: Hello are we ready
-Ask: It's gaming time
-
--> Yeah I guess
-    Ask: YEAH LET'S GOOOOOO
--> Meh
-    Ask: WHAT THE FUCUCUCUKKKKk
-    Ask: Bro that's totally lame
-    Ask: ...
-    Ask: Whatever
-    Ask: It's not like I
-    Ask: Care
-    Ask: Or anything.
-    Ask: Broooo what if i write a whole lot of dialogue like a whole thing of it. And it just goes and goes and goes and goes what then haha what then I wonder Broooo what if i write a whole lot of dialogue like a whole thing of it. And it just goes and goes and goes and goes what then haha what then I wonder Broooo what if i write a whole lot of dialogue like a whole thing of it. And it just goes and goes and goes and goes what then haha what then I wonder
+Test text!
+===
+title: Jacob
+---
+Jacob: Whatchu looking at 
+===
+title: Valentina
+---
+Valentina: I'm your dream girl baby
+===
+title: Lisa
+---
+Lisa: Whattttt are you even talking about
+===
+title: Ask
+---
+Ask: Yoooooooooo whats up 
+-> Feeling kinda bad.
+    Ask: Come on, it's a party. Lighten up.
+    -> I don't wanna.
+        Ask: You gotta.
+        -> Why?
+            Ask: I said so.
+            -> OK.
+    -> I guess you're right.
+        Ask: Sweeeeeet bro
+-> Feeling alright.
+    Ask: That's what I'm talking about!
 ===
