@@ -1,22 +1,27 @@
 ﻿title: Start1
+position: -253,23
 ---
 Test text!
 ===
 title: Jacob
+position: -42,168
 ---
 Jacob: Whatchu looking at 
 ===
 title: Helle
+position: 81,-73
 ---
 Helle: I'm your dream girl baby
     -> Yeah...
         Helle: I knew it!
 ===
 title: Lisa
+position: -123,-51
 ---
 Lisa: Whattttt are you even talking about
 ===
 title: Ask
+position: -370,231
 ---
 Ask: Yoooooooooo whats up 
 -> Feeling kinda bad.
