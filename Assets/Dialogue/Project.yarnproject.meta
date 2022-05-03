@@ -10,6 +10,7 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
   - {fileID: 6391573757903218779, guid: b995c290e2920ad479b6cad93b4b4edf, type: 3}
+  - {fileID: 6391573757903218779, guid: 70b0d917831224a4493baf0f462d6981, type: 3}
   compileErrors: []
   serializedDeclarations: []
   defaultLanguage: nb-NO
@@ -18,6 +19,12 @@ ScriptedImporter:
   searchAllAssembliesForActions: 1
   assembliesToSearch: []
   ListOfFunctions:
+  - Name: IsJacob
+    ReturnType: -> Boolean
+    Parameters: []
+  - Name: IsDefault
+    ReturnType: -> Boolean
+    Parameters: []
   - Name: Random
     ReturnType: -> Single
     Parameters: []

@@ -5,17 +5,17 @@ using Yarn.Unity;
 
 public class TokenBoolScript : MonoBehaviour
 {
-    public static TokenBoolScript Instance;
+    //public static TokenBoolScript Instance;
 
-    public Character currentCharacter;
+    public static Character currentCharacter;
 
     private void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else Destroy(this);
+        //if (Instance == null)
+        //{
+        //    Instance = this;
+        //}
+        //else Destroy(this);
 
     }
 
@@ -67,6 +67,67 @@ public class TokenBoolScript : MonoBehaviour
 
             case Character.Lisa:
                 break;
+        }
+
+    }
+
+
+    [YarnFunction("IsDefault")]
+
+    public static bool IsDefault()
+    {
+        if (currentCharacter == Character.Default)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+    [YarnFunction("IsJacob")]
+
+    public static bool IsJacob()
+    {
+        if (currentCharacter==Character.Jacob)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+    [YarnFunction("IsAsk")]
+
+    public static bool IsAsk()
+    {
+        if (currentCharacter == Character.Ask)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+    [YarnFunction("IsLisa")]
+
+    public static bool IsLisa()
+    {
+        if (currentCharacter == Character.Lisa)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
 
     }

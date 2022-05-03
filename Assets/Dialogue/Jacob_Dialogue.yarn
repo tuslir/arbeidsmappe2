@@ -1,0 +1,37 @@
+﻿title: JacobDialogue
+---
+<<if IsJacob()>>
+<<jump JacobToken>>
+
+<<elseif IsDefault()>>
+<<jump DefaultToken>>
+
+<<else>>
+Jacob: [wave]Idk who you are[/wave]
+
+<<endif>>
+
+===
+
+
+title: JacobToken
+---
+
+Jacob: You good?
+-> Yeah
+-> No
+
+
+===
+
+
+
+title: DefaultToken
+---
+
+Jacob: You good?
+-> No
+
+
+
+===

@@ -830,7 +830,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d3f95ac2eac384f91bca330f54c406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCharacter: 0
 --- !u!1 &674998782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,7 +2733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07e31abcbcfd1c469b38f451eb94bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversationStartNode: Jacob
+  conversationStartNode: JacobDialogue
   image: {fileID: 147930652}
   characterSpeaking: {fileID: 11400000, guid: 306f479d1883cd445970fda75baa9f21, type: 2}
   hidePortrait: {fileID: 11400000, guid: 35ad4b7088febe9439fc1f2244cdf274, type: 2}
