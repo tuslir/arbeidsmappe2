@@ -10,14 +10,18 @@ public class SceneSwitch : MonoBehaviour
     public static bool inCharacterView;
     public static bool inSceneView;
 
-    //public GameObject exitButton;
+    public GameObject exitButton;
+
+    YarnInteractable yarnInteractable;
 
 
 
     private void Start()
     {
-        //exitButton = GameObject.FindGameObjectWithTag("Exit");
+        exitButton = GameObject.FindGameObjectWithTag("Exit");
+        exitButton.SetActive(false);
 
+        yarnInteractable = FindObjectOfType<YarnInteractable>();
     }
 
     private void Update()
@@ -26,27 +30,31 @@ public class SceneSwitch : MonoBehaviour
         {
             inCharacterView = true;
             inSceneView = false;
-            //HideExitButton();
+            ShowExitButton();
         }
         else
         {
             inCharacterView = false;
             inSceneView = true;
-            //ShowExitButton();
+            HideExitButton();
+
         }
     }
 
     public void ShowExitButton()
     {
-        //exitButton.SetActive(true);
+        exitButton.SetActive(true);
     }
 
     public void HideExitButton()
     {
-        //exitButton.SetActive(false);
+        exitButton.SetActive(false);
     }
 
-
+    public void CloseConversation()
+    {
+        yarnInteractable.EndConversation();
+    }
 
 
 }

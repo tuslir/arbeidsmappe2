@@ -61,13 +61,16 @@ public class YarnInteractable : MonoBehaviour
     private void Update()
     {
 
-        if (conversationActive && Input.GetKeyDown(KeyCode.Space)) lineView.OnContinueClicked();
+        if (conversationActive)
+            if(Input.GetKeyDown(KeyCode.Space)) 
+                lineView.OnContinueClicked();
 
 
     }
 
     public void EndConversation()
     {
+        dialogueRunner.Stop();
         if (conversationActive) conversationActive = false;
         if (!conversationActive) sceneSprites.SetActive(true);
 
