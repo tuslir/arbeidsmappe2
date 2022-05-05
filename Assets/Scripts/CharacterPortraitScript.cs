@@ -8,6 +8,10 @@ public class CharacterPortraitScript : MonoBehaviour
     public Image image;
 
     public Button[] tokens;
+    public SpriteRenderer[] sceneSprites;
+    public BoxCollider2D[] boxCollide;
+
+    SceneSwitch sceneSwitch;
 
 
     private void Start()
@@ -26,6 +30,8 @@ public class CharacterPortraitScript : MonoBehaviour
             for (int i = 0; i < tokens.Length; i++)
             {
                 tokens[i].interactable = false;
+                sceneSprites[i].enabled = false;
+                boxCollide[i].enabled = false;
             }
         }
         else if (SceneSwitch.inSceneView)
@@ -33,8 +39,11 @@ public class CharacterPortraitScript : MonoBehaviour
             for (int i = 0; i < tokens.Length; i++)
             {
                 tokens[i].interactable = true;
+                sceneSprites[i].enabled = true;
+                boxCollide[i].enabled = true;
             }
         }
+
 
 
     }

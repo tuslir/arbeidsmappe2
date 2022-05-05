@@ -53,7 +53,7 @@ public class SceneSwitch : MonoBehaviour
 
     public void CloseConversation()
     {
-        yarnInteractable.EndConversation();
+        //Interactable.EndConversation();
     }
 
 

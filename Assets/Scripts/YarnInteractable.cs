@@ -13,6 +13,8 @@ public class YarnInteractable : MonoBehaviour
 
     private DialogueRunner dialogueRunner;
     private LineView lineView;
+    private OptionsListView optionsList;
+
 
     public string conversationStartNode;
 
@@ -22,27 +24,50 @@ public class YarnInteractable : MonoBehaviour
     public soPerson characterSpeaking;
     public soPerson hidePortrait;
 
+    public static bool isCurrentConversation;
+
 
     GameObject sceneSprites, characterView;
+
+    Interactable interactable;
+    
 
 
     public void Start()
     {
         sceneSprites = GameObject.FindGameObjectWithTag("SceneSprites");
         characterView = GameObject.FindGameObjectWithTag("CharacterPortrait");
+        interactable = FindObjectOfType<Interactable>();
+        optionsList = FindObjectOfType<Yarn.Unity.OptionsListView>();
 
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+        dialogueRunner.onDialogueComplete.AddListener(interactable.EndConversation);
+
         lineView = FindObjectOfType<Yarn.Unity.LineView>();
-        dialogueRunner.onDialogueComplete.AddListener(EndConversation);
     }
 
     //run dialogue from {conversationStartNode}
-    private void StartConversation()
+    public void StartConversation()
     {
+        isCurrentConversation = true;
 
         dialogueRunner.StartDialogue(conversationStartNode);
+
+        foreach (var dialogueView in dialogueRunner.dialogueViews)
+        {
+            if (dialogueView == null || dialogueView.isActiveAndEnabled == true) continue;
+
+            //optionsList.gameObject.SetActive(true);
+
+            //dialogueView.gameObject.SetActive(true);
+            dialogueView.DialogueStarted();
+        }
+
+        conversationActive = true;
+
+        //sceneSprites.SetActive(false);
+
         ShowPerson(characterSpeaking);
-        sceneSprites.SetActive(false);
 
     }
 
@@ -55,27 +80,19 @@ public class YarnInteractable : MonoBehaviour
     public void OnMouseDown()
     {
         StartConversation();
-        conversationActive = true;
     }
 
-    private void Update()
+    public void Update()
     {
 
-        if (conversationActive)
-            if(Input.GetKeyDown(KeyCode.Space)) 
-                lineView.OnContinueClicked();
+        if (conversationActive && Input.GetKeyDown(KeyCode.Space))
+        {
+            lineView.OnContinueClicked();
+        }
 
-
+        if (!conversationActive) ShowPerson(hidePortrait);
     }
 
-    public void EndConversation()
-    {
-        dialogueRunner.Stop();
-        if (conversationActive) conversationActive = false;
-        if (!conversationActive) sceneSprites.SetActive(true);
-
-        ShowPerson(hidePortrait);
-    }
 
 
 
