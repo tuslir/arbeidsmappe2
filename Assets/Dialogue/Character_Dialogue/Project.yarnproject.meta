@@ -9,8 +9,11 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
-  - {fileID: 6391573757903218779, guid: b995c290e2920ad479b6cad93b4b4edf, type: 3}
+  - {fileID: 6391573757903218779, guid: 1664e792113f22e4caec2d491f373368, type: 3}
   - {fileID: 6391573757903218779, guid: 70b0d917831224a4493baf0f462d6981, type: 3}
+  - {fileID: 6391573757903218779, guid: d0dc0a2c2fff1ca40a4f6d92cf15bc47, type: 3}
+  - {fileID: 6391573757903218779, guid: a57967b3c380c5e418c766b66bc7118c, type: 3}
+  - {fileID: 6391573757903218779, guid: f5254c053513b1e4c805aa71f9fdf56e, type: 3}
   compileErrors: []
   serializedDeclarations: []
   defaultLanguage: nb-NO
@@ -19,10 +22,16 @@ ScriptedImporter:
   searchAllAssembliesForActions: 1
   assembliesToSearch: []
   ListOfFunctions:
+  - Name: IsDefault
+    ReturnType: -> Boolean
+    Parameters: []
   - Name: IsJacob
     ReturnType: -> Boolean
     Parameters: []
-  - Name: IsDefault
+  - Name: IsAsk
+    ReturnType: -> Boolean
+    Parameters: []
+  - Name: IsLisa
     ReturnType: -> Boolean
     Parameters: []
   - Name: Random

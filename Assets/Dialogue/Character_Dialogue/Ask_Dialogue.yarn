@@ -1,0 +1,28 @@
+﻿title: Ask_dialogue
+---
+Ask: Cool cool
+<<if IsDefault()>>
+    <<jump Ask_default>>
+<<elseif IsAsk()>>
+    <<jump Ask_ask>>
+<<elseif IsJacob()>>
+    <<jump Ask_jacob>>
+<<elseif IsLisa()>>
+    <<jump Ask_lisa>>
+
+<<endif>>
+===
+
+title: Ask_start
+---
+Ask: Hey!
+Ask: You're finally awake.
+-> Ok
+
+===
+
+title: Ask_default
+---
+
+===
+

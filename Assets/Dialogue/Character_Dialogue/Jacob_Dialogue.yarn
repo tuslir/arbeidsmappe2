@@ -1,0 +1,52 @@
+﻿title: Jacob_dialogue
+---
+<<if IsDefault()>>
+    <<jump Jacob_default>>
+<<elseif IsJacob()>>
+    <<jump Jacob_jacob>>
+<<else>>
+
+Jacob: Idk who you are
+-> \[Exit conversation\]
+
+<<endif>>
+
+===
+
+
+title: Jacob_jacob
+---
+
+Jacob: You good?
+Jacob: Like really good?
+Jacob: Yeah???
+-><color=\#37946E><b>Yeah</b></color>
+    <<jump Jacob_jacob2>>
+-> No
+-> \[Exit conversation\]
+
+
+===
+
+title: Jacob_jacob2
+---
+Jacob: Yeah me too, totally.
+-><color=\#37946E><b>Yeah me too</b></color>
+    <<jump Jacob_jacob2>>
+-> \[Exit conversation\]
+<<if IsLisa()>>
+-> <color=\#D0A94C><b>Yeah me too</b></color>
+<<endif>>
+===
+
+
+title: Jacob_default
+---
+
+Jacob: You good?
+-> No
+-> \[Exit conversation\]
+
+
+
+===

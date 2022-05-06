@@ -26,22 +26,15 @@ public class YarnInteractable : MonoBehaviour
 
     public static bool isCurrentConversation;
 
-
-    GameObject sceneSprites, characterView;
-
-    Interactable interactable;
-    
-
+    GameObject characterView;
+   
 
     public void Start()
     {
-        sceneSprites = GameObject.FindGameObjectWithTag("SceneSprites");
         characterView = GameObject.FindGameObjectWithTag("CharacterPortrait");
-        interactable = FindObjectOfType<Interactable>();
-        optionsList = FindObjectOfType<Yarn.Unity.OptionsListView>();
 
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
-        dialogueRunner.onDialogueComplete.AddListener(interactable.EndConversation);
+        dialogueRunner.onDialogueComplete.AddListener(EndConversation);
 
         lineView = FindObjectOfType<Yarn.Unity.LineView>();
     }
@@ -53,22 +46,9 @@ public class YarnInteractable : MonoBehaviour
 
         dialogueRunner.StartDialogue(conversationStartNode);
 
-        foreach (var dialogueView in dialogueRunner.dialogueViews)
-        {
-            if (dialogueView == null || dialogueView.isActiveAndEnabled == true) continue;
-
-            //optionsList.gameObject.SetActive(true);
-
-            //dialogueView.gameObject.SetActive(true);
-            dialogueView.DialogueStarted();
-        }
-
         conversationActive = true;
 
-        //sceneSprites.SetActive(false);
-
         ShowPerson(characterSpeaking);
-
     }
 
     public void ShowPerson(soPerson person)
@@ -85,12 +65,21 @@ public class YarnInteractable : MonoBehaviour
     public void Update()
     {
 
-        if (conversationActive && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             lineView.OnContinueClicked();
         }
 
         if (!conversationActive) ShowPerson(hidePortrait);
+    }
+
+    public void EndConversation()
+    {
+
+        if (isCurrentConversation) isCurrentConversation = false;
+
+        if (conversationActive) conversationActive = false;
+
     }
 
 
