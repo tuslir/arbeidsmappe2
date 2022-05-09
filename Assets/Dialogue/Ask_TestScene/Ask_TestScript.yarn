@@ -1,0 +1,65 @@
+﻿title: AskTest
+---
+
+
+Ask: Hey, this is some test dialogue,
+Ask: to test dialogue writing and responses.
+<<jump Option1>>
+
+
+
+
+===
+
+title: Option1
+---
+<<if IsJacob()>>
+    <<jump Jacob_1>>
+<<elseif IsLisa()>>
+    <<jump Lisa_1>>
+<<elseif IsAsk()>>
+    <<jump Ask_1>>
+<<else>>
+
+Ask: What do you think about it?
+-> Neato.
+    Ask: Yeah, I guess it's pretty neat.
+-> \[Exit conversation.\]
+<<endif>>
+===
+
+title: Jacob_1
+---
+
+Ask: What do you think about it?
+-> <color=\#37946E>Yeah, cool.</color>
+    Ask: It is cool.
+-> Neato.
+    Ask: Yeah, I guess it's pretty neat.
+-> \[Exit conversation.\]
+
+===
+
+title: Lisa_1
+---
+
+Ask: What do you think about it?
+-> <color=\#A22F2f>Yeah, alright.</color>
+    Ask: Nice, good talk.
+-> Neato.
+    Ask: Yeah, I guess it's pretty neat.
+-> \[Exit conversation.\]
+
+===
+
+title: Ask_1
+---
+
+Ask: What do you think about it?
+-> <color=\#A24384>Yeah, I get it.</color>
+    Ask: Nice, I get it too.
+-> Neato.
+    Ask: Yeah, I guess it's pretty neat.
+-> \[Exit conversation.\]
+
+===

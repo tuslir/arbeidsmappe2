@@ -1,0 +1,127 @@
+﻿title: Ask_beginning
+position: -145,-327
+---
+
+<<if visited("Jacob_contacthelp") == true>>
+    <<jump Jacob_onhisway>>
+<<elseif visited("Lisa_contacthelp") == true>>
+    <<jump Lisa_changedhismind>>
+
+<<else>>
+    <<jump Ask_annoyed>>
+
+<<endif>>
+
+===
+
+title: Ask_annoyed
+---
+
+Ask: This is so annoying! Tommy told me he'd be here tonight but nobody's seen him. 
+Ask: I've quadruple texted him and he still doesn't reply. 
+    <<jump Ask_annoyed_option>>
+
+===
+
+title: Ask_annoyed_option
+---
+<<if visited("Ask_annoyed") == true>>
+
+<<if IsJacob()>>
+    <<jump Jacob_contacthelp>>
+<<elseif IsLisa()>>
+    <<jump Lisa_contacthelp>>
+<<elseif IsAsk()>>
+    <<jump Ask_contacthelp>>
+<<else>>
+
+
+Ask: What do you think I should do?
+-> Ummmm...
+    Ask: Forget I asked. 
+-> \[Exit conversation.\]
+
+
+<<endif>>
+<<endif>>
+
+===
+
+
+title: Jacob_contacthelp
+position: 230,-45
+---
+
+Ask: What do you think I should do?
+-><color=\#37946E> Just wait it out. He's probably on his way.</color>
+    <<jump Jacob_onhisway>>
+-> Ummmm...
+    Ask: Forget I asked. 
+-> \[Exit conversation.\]
+
+
+===
+
+title: Jacob_onhisway
+position: 326,-251
+---
+
+<<if IsLisa()>>
+    <<jump Lisa_onhisway>>
+<<elseif IsAsk()>>
+    <<jump Ask_onhisway>>
+<<elseif IsDefault()>>
+    <<jump Default_onhisway>>
+<<else>>
+
+Ask: I don't know why he always does this. 
+Ask: I just want to hang out with him. Be seen with him. All the time.
+Ask: But I feel like he's avoiding me, sometimes.
+Ask: Is it me? Is it my fault? 
+-> <color=\#37946E>No, it's not you.</color>
+    Ask: I mean, I wish I believed you.
+-> Uh...
+    Ask: Yeah, okay.
+-> \[Exit conversation.\]
+<<endif>>
+
+===
+
+title: Ask_contacthelp
+position: -143,-24
+---
+
+Ask: What do you think I should do?
+-> <color=\#A24384>FaceTime his mom!</color>
+    Ask: I... don't think I wanna do that.
+-> Ummmm...
+    Ask: Forget I asked. 
+-> \[Exit conversation.\]
+===
+
+
+title: Lisa_contacthelp
+position: 47,-25
+---
+
+Ask: What do you think I should do?
+-> <color=\#A22F2f>Maybe he changed his mind about coming.</color>
+    <<jump Lisa_changedhismind>>
+-> Ummmm...
+    Ask: Forget I asked. 
+-> \[Exit conversation.\]
+===
+
+title: Lisa_changedhismind
+position: 48,155
+---
+
+//lisa thinks tommy's changed his mind about coming. 
+
+===
+
+title: Lisa_onhisway
+position: 9,-135
+---
+he's on his mind or whatever lol
+===
