@@ -1,127 +1,405 @@
-﻿title: Ask_beginning
-position: -145,-327
+﻿title: Start
 ---
-
-<<if visited("Jacob_contacthelp") == true>>
-    <<jump Jacob_onhisway>>
-<<elseif visited("Lisa_contacthelp") == true>>
-    <<jump Lisa_changedhismind>>
+//beginning. check if statements.
+<<if visited("brave")==true>>
+    <<jump ending1>>
+<<elseif visited("worth_your_time")==true>>
+    <<jump ending2>>
 
 <<else>>
-    <<jump Ask_annoyed>>
+    <<jump what_to_do>>
 
 <<endif>>
-
 ===
 
-title: Ask_annoyed
+title: what_to_do
 ---
+<<if visited("on_his_way_option")==true>>
+    <<jump on_his_way>>
+<<endif>>
 
-Ask: This is so annoying! Tommy told me he'd be here tonight but nobody's seen him. 
-Ask: I've quadruple texted him and he still doesn't reply. 
-    <<jump Ask_annoyed_option>>
+<<if visited("changed_his_mind_option")==true>>
+    <<jump changed_his_mind>>
 
+<<else>>
+Ask: Hey, have you seen Tommy?
+Ask: He told me he'd be here tonight but <color=\#37946E>no one's seen him</color>.
+Ask: I've quadrupled texted him and he <color=\#A22F2f>hasn't answered</color>.
+    <<jump what_to_do_option>>
+
+<<endif>>
 ===
 
-title: Ask_annoyed_option
+title: what_to_do_option
 ---
-<<if visited("Ask_annoyed") == true>>
 
-<<if IsJacob()>>
-    <<jump Jacob_contacthelp>>
-<<elseif IsLisa()>>
-    <<jump Lisa_contacthelp>>
+Ask: What do you think I should do?
+
+<<if IsLisa()>>
+    <<jump Lisa_whattodo>>
+
 <<elseif IsAsk()>>
-    <<jump Ask_contacthelp>>
+    <<jump Ask_whattodo>>
+
+<<elseif IsJacob()>>
+    <<jump Jacob_whattodo>>
+
 <<else>>
 
-
-Ask: What do you think I should do?
--> Ummmm...
-    Ask: Forget I asked. 
+-> Ummm...
+    Ask: Yeah?
+        <<jump what_to_do_option>>
 -> \[Exit conversation.\]
 
-
 <<endif>>
-<<endif>>
+===
 
+title: Ask_whattodo
+---
+-> <color=\#A24384>FaceTime his mom!</color>
+    Ask: I... don't think I wanna do that.
+        <<jump what_to_do_option>>
+-> Ummmm...
+    Ask: Yeah?
+        <<jump what_to_do_option>>
+-> \[Exit conversation.\]
 ===
 
 
-title: Jacob_contacthelp
-position: 230,-45
+title: Lisa_whattodo
 ---
-
-Ask: What do you think I should do?
--><color=\#37946E> Just wait it out. He's probably on his way.</color>
-    <<jump Jacob_onhisway>>
--> Ummmm...
-    Ask: Forget I asked. 
+-> <color=\#A22F2f>Maybe he changed his mind about coming.</color>
+    <<jump changed_his_mind>>
+-> Ummm...
+    Ask: Yeah?
+        <<jump what_to_do_option>>
 -> \[Exit conversation.\]
-
-
 ===
 
-title: Jacob_onhisway
-position: 326,-251
+title: Jacob_whattodo
 ---
+-><color=\#37946E>Just wait it out. He's probably on his way.</color>
+    <<jump on_his_way>>
+-> Ummmm...
+    Ask: Yeah?
+        <<jump what_to_do_option>>
+-> \[Exit conversation.\]
+===
+
+title: on_his_way
+---
+<<if visited ("childish_behaviour_option")==true>>
+    <<jump childish_behaviour>>
+<<else>>
+Ask: I don't know why he <color=\#A22F2f>always does this</color>.
+Ask: It feels like he's <color=\#A24384>avoiding me</color>, sometimes.
+<<jump on_his_way_option>>
+
+<<endif>>
+===
+
+title: on_his_way_option
+---
+Ask: Maybe it's my fault. We had a fight.
 
 <<if IsLisa()>>
     <<jump Lisa_onhisway>>
+
 <<elseif IsAsk()>>
     <<jump Ask_onhisway>>
-<<elseif IsDefault()>>
-    <<jump Default_onhisway>>
+
+<<elseif IsJacob()>>
+    <<jump Jacob_onhisway>>
+
 <<else>>
 
-Ask: I don't know why he always does this. 
-Ask: I just want to hang out with him. Be seen with him. All the time.
-Ask: But I feel like he's avoiding me, sometimes.
-Ask: Is it me? Is it my fault? 
--> <color=\#37946E>No, it's not you.</color>
-    Ask: I mean, I wish I believed you.
 -> Uh...
     Ask: Yeah, okay.
+        <<jump on_his_way_option>>
 -> \[Exit conversation.\]
+
 <<endif>>
-
-===
-
-title: Ask_contacthelp
-position: -143,-24
----
-
-Ask: What do you think I should do?
--> <color=\#A24384>FaceTime his mom!</color>
-    Ask: I... don't think I wanna do that.
--> Ummmm...
-    Ask: Forget I asked. 
--> \[Exit conversation.\]
-===
-
-
-title: Lisa_contacthelp
-position: 47,-25
----
-
-Ask: What do you think I should do?
--> <color=\#A22F2f>Maybe he changed his mind about coming.</color>
-    <<jump Lisa_changedhismind>>
--> Ummmm...
-    Ask: Forget I asked. 
--> \[Exit conversation.\]
-===
-
-title: Lisa_changedhismind
-position: 48,155
----
-
-//lisa thinks tommy's changed his mind about coming. 
 
 ===
 
 title: Lisa_onhisway
-position: 9,-135
 ---
-he's on his mind or whatever lol
+-> <color=\#A22F2f>If he wants to be a big baby about it, let him.</color>
+    <<jump childish_behaviour>>
+-> Uh...
+    Ask: Yeah, okay.
+        <<jump on_his_way_option>>
+-> \[Exit conversation.\]
+
 ===
+
+title: Ask_onhisway
+---
+-> <color=\#A24384>Well, did you apologize?</color>
+    <<jump apologize>>
+-> Uh...
+    Ask: Yeah, okay.
+        <<jump on_his_way_option>>
+-> \[Exit conversation.\]
+===
+
+title: Jacob_onhisway
+---
+-><color=\#37946E>No, it's not you.</color>
+    Ask: I just don't know.
+        <<jump on_his_way_option>>
+-> Uh...
+    Ask: Yeah, okay.
+        <<jump on_his_way_option>>
+-> \[Exit conversation.\]
+===
+
+title: childish_behaviour
+---
+
+Ask: How long should I wait for him to <color=\#A24384>get it together</color>, then?
+Ask: I mean, I've never told him this -- I've never told anyone this -- but <color=\#37946E>I fucking love him</color>.
+<<jump childish_behaviour_option>>
+
+===
+
+title: childish_behaviour_option
+---
+Ask: Why is this so difficult?
+
+<<if IsLisa()>>
+    <<jump Lisa_childishbehaviour>>
+
+<<elseif IsAsk()>>
+    <<jump Ask_childishbehaviour>>
+
+<<elseif IsJacob()>>
+    <<jump Jacob_childishbehaviour>>
+
+<<else>>
+
+-> Oh, wow...
+    Ask: Can you believe it?
+        <<jump childish_behaviour_option>>
+-> \[Exit conversation.\]
+
+<<endif>>
+
+===
+
+title: Lisa_childishbehaviour
+---
+-> <color=\#A22F2f>That's a stupid thing to fight about.</color>
+    Ask: I guess I'm just not very good at this.
+        <<jump childish_behaviour_option>>
+-> Oh, wow...
+    Ask: Can you believe it?
+        <<jump childish_behaviour_option>>
+-> \[Exit conversation.\]
+===
+
+title: Ask_childishbehaviour
+---
+-> <color=\#A24384>Are you sure? Sounds more like you're annoyed with him.</color>
+    <<jump worth_your_time>>
+-> Oh, wow...
+    Ask: Can you believe it?
+        <<jump childish_behaviour_option>>
+-> \[Exit conversation.\]
+===
+
+title: Jacob_childishbehaviour
+---
+-> <color=\#37946E>You just told me. Now tell him the same thing.</color>
+    <<jump brave>>
+-> Oh, wow...
+    Ask: Can you believe it?
+        <<jump childish_behaviour_option>>
+-> \[Exit conversation.\]
+===
+
+
+
+title: changed_his_mind
+---
+<<if visited ("apologize_option")==true>>
+    <<jump apologize_option>>
+<<endif>>
+
+<<if visited ("childish_behaviour_option")==true>>
+    <<jump childish_behaviour>>
+<<else>>
+Ask: I wish he would at least tell me if he found <color=\#A22F2f>something better to do</color>.
+Ask: Someone better.
+Ask: I could <color=\#A24384>go with him</color>.
+<<jump changed_his_mind_option>>
+
+<<endif>>
+===
+
+title: changed_his_mind_option
+---
+Ask: I just want to be with him all the time.
+
+<<if IsLisa()>>
+    <<jump Lisa_changedhismind>>
+
+<<elseif IsAsk()>>
+    <<jump Ask_changedhismind>>
+
+<<elseif IsJacob()>>
+    <<jump Jacob_changedhismind>>
+
+<<else>>
+
+-> Uh, yeah...
+    Ask: Yeah, this sucks.
+        <<jump changed_his_mind_option>>
+-> \[Exit conversation.\]
+
+<<endif>>
+
+===
+
+title: Lisa_changedhismind
+---
+-> <color=\#A22F2f>He wants the same thing. He's just scared.</color>
+        <<jump childish_behaviour>>
+-> Uh, yeah...
+    Ask: Yeah, this sucks.
+        <<jump changed_his_mind_option>>
+-> \[Exit conversation.\]
+===
+
+title: Ask_changedhismind
+---
+-> <color=\#A24384>Just tell him that. Let him know.</color>
+    <<jump apologize>>
+-> Uh, yeah...
+    Ask: Yeah, this sucks.
+        <<jump changed_his_mind_option>>
+-> \[Exit conversation.\]
+===
+
+title: Jacob_changedhismind
+---
+-> <color=\#37946E>That's not a bad thing.</color>
+    Ask: Not really helpful, is it?
+        <<jump changed_his_mind_option>>
+-> Uh, yeah...
+    Ask: Yeah, this sucks.
+        <<jump changed_his_mind_option>>
+-> \[Exit conversation.\]
+===
+
+
+
+title: apologize
+---
+<<if visited("apologize_option")==true>>
+<<jump apologize_option>>
+<<else>>
+Ask: How? 
+Ask: With my <i>words</i>?
+Ask: He's <color=\#A22F2f>so pretty</color>.
+Ask: Sometimes I feel like I can't even <color=\#37946E>look at him</color>.
+<<jump apologize_option>>
+<<endif>>
+===
+
+title: apologize_option
+---
+Ask: How do I even talk to him?
+
+<<if IsLisa()>>
+    <<jump Lisa_apologize>>
+
+<<elseif IsAsk()>>
+    <<jump Ask_apologize>>
+
+<<elseif IsJacob()>>
+    <<jump Jacob_apologize>>
+
+<<else>>
+
+-> I don't know...
+    Ask: WHY IS IT SO HARD TO TALK TO PRETTY PEOPLE.
+        <<jump apologize_option>>
+-> \[Exit conversation.\]
+
+<<endif>>
+
+===
+
+title: Lisa_apologize
+---
+
+-> <color=\#A22F2f>Just because he's pretty doesn't mean he's worth your time.</color>
+    <<jump worth_your_time>>
+-> I don't know...
+    Ask: WHY IS IT SO HARD TO TALK TO PRETTY PEOPLE.
+        <<jump apologize_option>>
+-> \[Exit conversation.\]
+
+===
+
+title: Ask_apologize
+---
+
+-> <color=\#A24384>You've already quadruple texted.</color>
+    Ask: Yeah, and it didn't help!
+        <<jump apologize_option>>
+-> I don't know...
+    Ask: WHY IS IT SO HARD TO TALK TO PRETTY PEOPLE.
+        <<jump apologize_option>>
+-> \[Exit conversation.\]
+
+===
+
+title: Jacob_apologize
+---
+-> <color=\#37946E>Take a deep breath and be brave.</color>
+    <<jump brave>>
+-> I don't know...
+    Ask: WHY IS IT SO HARD TO TALK TO PRETTY PEOPLE.
+        <<jump apologize_option>>
+-> \[Exit conversation.\]
+
+===
+
+title: worth_your_time
+---
+Ask: It's just.
+Ask: It's the way he looks at me.
+Ask: ...
+Ask: You know what?
+    <<jump ending2>>
+
+===
+
+title: brave
+---
+Ask: It's that easy, huh?
+Ask: ...
+Ask: You know what?
+    <<jump ending1>>
+
+===
+
+title: ending1
+---
+Ask: Fuck it.
+Ask: You're right.
+Ask: I'm gonna go find him and kiss him on his stupid lips.
+===
+
+title: ending2
+---
+Ask: Maybe you're right.
+Ask: Stupid pretty boys.
+Ask: Won't even hold their promises.
+Ask: They'll only break your heart in the end.
+
+===
+
+
