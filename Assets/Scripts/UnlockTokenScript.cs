@@ -2,26 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.UI;
 
 public class UnlockTokenScript : MonoBehaviour
 {
 
+
     [YarnCommand("unlock_ask")]
-    public static void UnlockAsk(bool askToken = true)
+    public static void UnlockAsk(bool askToken=true)
     {
-        print("ask unlocked!");
+        Button askButton = GameObject.FindGameObjectWithTag("AskToken").GetComponent<Button>();
+
+
+        if (askToken)
+        {
+
+            print("ask unlocked!");
+            askButton.interactable = true;
+        }
+
     }
 
     [YarnCommand("unlock_jacob")]
     public static void UnlockJacob(bool jacobToken = true)
     {
-        print("jacob unlocked!");
+        Button jacobButton = GameObject.FindGameObjectWithTag("JacobToken").GetComponent<Button>();
+
+
+        if (jacobToken)
+        {
+
+            print("ask unlocked!");
+            jacobButton.interactable = true;
+        }
+
     }
 
     [YarnCommand("unlock_lisa")]
     public static void UnlockLisa(bool lisaToken = true)
     {
-        print("lisa unlocked!");
+        Button lisaButton = GameObject.FindGameObjectWithTag("LisaToken").GetComponent<Button>();
+
+
+        if (lisaToken)
+        {
+
+            print("ask unlocked!");
+            lisaButton.interactable = true;
+        }
+
     }
 
 

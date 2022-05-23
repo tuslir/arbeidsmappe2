@@ -29,7 +29,7 @@ public class CharacterPortraitScript : MonoBehaviour
         {
             for (int i = 0; i < tokens.Length; i++)
             {
-                tokens[i].interactable = false;
+                //tokens[i].interactable = false;
                 sceneSprites[i].enabled = false;
                 boxCollide[i].enabled = false;
             }
@@ -38,7 +38,7 @@ public class CharacterPortraitScript : MonoBehaviour
         {
             for (int i = 0; i < tokens.Length; i++)
             {
-                tokens[i].interactable = true;
+                //tokens[i].interactable = true;
                 sceneSprites[i].enabled = true;
                 boxCollide[i].enabled = true;
             }

@@ -9,6 +9,9 @@ TagManager:
   - Exit
   - Token
   - AskBeginningPortrait
+  - AskToken
+  - LisaToken
+  - JacobToken
   layers:
   - Default
   - TransparentFX
