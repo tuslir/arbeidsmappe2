@@ -1,0 +1,16 @@
+﻿title: Start
+tags:
+---
+Ask: You're here!
+Ask: I'm so glad you made it.
+-> Hi, Ask.
+Ask: You bring anything?
+-> Just some wine.
+-> I didn't know I was supposed to.
+Ask: We were all so excited when we heard you were coming.
+Ask: You remember everyone?
+-> I'm bad with faces.
+-> I do, I just need a minute.
+<<ask_end>>
+
+===

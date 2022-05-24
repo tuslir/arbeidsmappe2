@@ -27,21 +27,30 @@ public class CharacterPortraitScript : MonoBehaviour
     {
         if (SceneSwitch.inCharacterView)
         {
+
+
             for (int i = 0; i < tokens.Length; i++)
             {
-                //tokens[i].interactable = false;
+                tokens[i].interactable = false;
                 sceneSprites[i].enabled = false;
                 boxCollide[i].enabled = false;
             }
         }
         else if (SceneSwitch.inSceneView)
         {
-            for (int i = 0; i < tokens.Length; i++)
-            {
-                //tokens[i].interactable = true;
-                sceneSprites[i].enabled = true;
-                boxCollide[i].enabled = true;
+
+                for (int i = 0; i < tokens.Length; i++)
+                {
+                    sceneSprites[i].enabled = true;
+                    boxCollide[i].enabled = true;
+                if (tokens[i].CompareTag("UnlockedToken"))
+                {
+                    tokens[i].interactable = true;
+
+                }
+
             }
+
         }
 
 

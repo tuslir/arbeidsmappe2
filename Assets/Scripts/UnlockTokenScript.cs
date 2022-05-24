@@ -19,6 +19,7 @@ public class UnlockTokenScript : MonoBehaviour
 
             print("ask unlocked!");
             askButton.interactable = true;
+            askButton.gameObject.transform.gameObject.tag = "UnlockedToken";
         }
 
     }
@@ -34,6 +35,8 @@ public class UnlockTokenScript : MonoBehaviour
 
             print("ask unlocked!");
             jacobButton.interactable = true;
+            jacobButton.gameObject.transform.gameObject.tag = "UnlockedToken";
+
         }
 
     }
@@ -49,6 +52,8 @@ public class UnlockTokenScript : MonoBehaviour
 
             print("ask unlocked!");
             lisaButton.interactable = true;
+            lisaButton.gameObject.transform.gameObject.tag = "UnlockedToken";
+
         }
 
     }

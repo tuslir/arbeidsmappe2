@@ -32,7 +32,6 @@ Ask: I've quadrupled texted him and he <color=\#A22F2f>hasn't answered</color>.
 
 title: what_to_do_option
 ---
-
 Ask: What do you think I should do?
 
 <<if IsLisa()>>

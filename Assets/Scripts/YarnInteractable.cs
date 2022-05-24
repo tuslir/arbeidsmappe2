@@ -64,12 +64,10 @@ public class YarnInteractable : MonoBehaviour
 
     public void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             lineView.OnContinueClicked();
         }
-
         if (!conversationActive) ShowPerson(hidePortrait);
     }
 

@@ -1,8 +1,52 @@
-﻿title: Start
+﻿title: JT
 ---
-Well, it's a party.
-Hello hello hello hello
-Hello
-Hello!!
--> Yes
+<<if visited("JT")>>
+    <<jump JT2>>
+<<endif>>
+Jacob: Here, have my token.
+-> Thanks.
+<<unlock_jacob>>
+===
+
+title: JT2
+---
+Jacob: I'm sneaky
+===
+
+title: AT
+---
+<<if visited("AT")>>
+    <<jump AT2>>
+<<endif>>
+
+Ask: You're talking to me!
+Ask: Here's my token.
+-> Thanks!
+<<unlock_ask>>
+===
+
+title: AT2
+---
+Ask: This might be a cool workaround idk.
+===
+
+title: LT
+---
+<<if visited("LT")>>
+    <<jump LT2>>
+<<endif>>
+Lisa: Wow, cool, you're talking to me.
+Lisa: Here's my token.
+-> Thanks!
+<<unlock_lisa>>
+===
+
+title: LT2
+---
+Lisa: Whatever
+===
+
+title: Helle
+---
+Helle: Hey
 ===
