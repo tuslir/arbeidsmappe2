@@ -8,12 +8,27 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("EnterParty", LoadSceneMode.Single);
+        StartCoroutine(WaitThenStart());
     }
 
     public void QuitGame()
     {
+        StartCoroutine(WaitThenQuit());
+    }
+
+    IEnumerator WaitThenStart()
+    {
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene("EnterParty", LoadSceneMode.Single);
+
+    }    
+    
+    IEnumerator WaitThenQuit()
+    {
+        yield return new WaitForSeconds(0.3f);
         Application.Quit();
+
+
     }
 
 }

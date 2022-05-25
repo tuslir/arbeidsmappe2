@@ -1,0 +1,28 @@
+﻿title: PartyIntro
+tags:
+---
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+There will be an intro text here, but that will come later.
+;-)
+<<intro_end>>
+===
+
+title: Enter_Party
+---
+
+Your best friend Ask invited you to a party tonight.
+A kind gesture, sweet as honey. An opportunity, even -- you don't really know their friends.
+You pull up on your bike in the driveway. Park it against a tree and make your way inside.
+It is evening, early August. Tonight is a blank slate.
+Open-ended and numbing.
+The warmth of summer still lingers in the corners of the room, the rest of the space is occupied by people.
+Not a lot of people, but they're all tied at the hip. That much is obvious.
+There's a lot of empty space between you and the rest of them.
+But Ask is here, a safe haven. For the past two years, they've known you better than you know yourself. 
+You barely make it through the door before they're on you. 
+Thankfully.
+<<wait 2>>
+<<intro_end>>
+===

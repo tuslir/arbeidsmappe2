@@ -1,0 +1,25 @@
+﻿title: Unlocked_Ask
+---
+<<stop_time>>
+<i>Well, it's a party.
+<i>Here is the night, long and open, sticky-sweet.
+<i>Here is the room.
+<i>Sometimes it feels like a blessing to hear how others use their words.
+<i>From the second you walked through these doors you've known,
+<i>that you're simply the observer.
+<i>There are a lot of ways these conversations can go.
+<i>The best thing you can do is
+<i><color=\#37946E>cling to the melody,
+<i><color=\#A22F2f>to their words,
+<i><color=\#D0A94C>and it might lead you somewhere.
+...
+\[You have unlocked <color=\#A24384>ASK'S TOKEN</color>.\]
+<<show_unlocked>>
+\[You can switch between tokens by pressing the corresponding button in the lower-right corner.\]
+<<end_anim>>
+\[Your choices will open you up to new dialogue options.\]
+\[Tokens can only be switched while on this screen, but don't worry --\]
+\[You can always exit a conversation and try another way.\]
+\[Explore your options, and enjoy the party.\]
+<<reset_time>>
+===
