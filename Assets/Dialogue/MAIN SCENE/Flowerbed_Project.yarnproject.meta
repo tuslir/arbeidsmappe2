@@ -1,0 +1,125 @@
+fileFormatVersion: 2
+guid: 8a6b311e86baad74c8d6edb8e68134c4
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
+  sourceScripts:
+  - {fileID: 6391573757903218779, guid: 8f81636a4a8287f4cbd1babad1362b36, type: 3}
+  - {fileID: 6391573757903218779, guid: 007c63bb83d1d604caf04f62f1742542, type: 3}
+  - {fileID: 6391573757903218779, guid: f1095252921e9f442944f8fcc25e075a, type: 3}
+  - {fileID: 6391573757903218779, guid: ce2226a33685c9444ac012e9e63473f5, type: 3}
+  - {fileID: 6391573757903218779, guid: 51e0f075489df4444896baf78562ef95, type: 3}
+  - {fileID: 6391573757903218779, guid: 74ffbb0df614bd04b84a6f6e11b148dd, type: 3}
+  compileErrors: []
+  serializedDeclarations:
+  - name: $Striped_Shirt
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Ask.yarn, node Ask_Start
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ce2226a33685c9444ac012e9e63473f5, type: 3}
+  - name: $Moon_Earrings
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Ask.yarn, node Ask_Start
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ce2226a33685c9444ac012e9e63473f5, type: 3}
+  - name: $Yarn.Internal.Visiting.Have_Fun1
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: The generated variable for tracking visits of node Have_Fun1
+    isImplicit: 0
+    sourceYarnAsset: {instanceID: 0}
+  - name: $Yarn.Internal.Visiting.Grew_Up_Together
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: The generated variable for tracking visits of node Grew_Up_Together
+    isImplicit: 0
+    sourceYarnAsset: {instanceID: 0}
+  - name: $Yarn.Internal.Visiting.Similar_Vibe
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: The generated variable for tracking visits of node Similar_Vibe
+    isImplicit: 0
+    sourceYarnAsset: {instanceID: 0}
+  defaultLanguage: nb-NO
+  languagesToSourceAssets: []
+  useAddressableAssets: 0
+  searchAllAssembliesForActions: 1
+  assembliesToSearch: []
+  ListOfFunctions:
+  - Name: IsDefault
+    ReturnType: -> Boolean
+    Parameters: []
+  - Name: IsJacob
+    ReturnType: -> Boolean
+    Parameters: []
+  - Name: IsAsk
+    ReturnType: -> Boolean
+    Parameters: []
+  - Name: IsLisa
+    ReturnType: -> Boolean
+    Parameters: []
+  - Name: Random
+    ReturnType: -> Single
+    Parameters: []
+  - Name: RandomRange
+    ReturnType: -> Single
+    Parameters:
+    - minInclusive
+    - maxInclusive
+  - Name: Dice
+    ReturnType: -> Int32
+    Parameters:
+    - sides
+  - Name: Round
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: RoundPlaces
+    ReturnType: -> Single
+    Parameters:
+    - num
+    - places
+  - Name: Floor
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: Ceil
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: Inc
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: Dec
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: Decimal
+    ReturnType: -> Single
+    Parameters:
+    - num
+  - Name: Int
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: CoolFunction
+    ReturnType: -> Int32
+    Parameters: []

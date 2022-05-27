@@ -1,0 +1,23 @@
+﻿title: Helle_Start
+---
+<<if visited("Helle_Start") && IsDefault()>>
+    Helle: See you around, okay?
+<<elseif visited("Helle_Start") && !IsDefault()>>
+Helle: Hi.
+-> <color=\#A24384>I like your look tonight. <<if IsAsk()>>
+-> Um, hi. 
+<<else>>
+<i>About Helle.
+Helle: Hi.
+-> Um, hi. 
+    Helle: Hey.
+    -> Hey.
+        Helle: Parrot.
+        -> Um, what?
+            Helle: Nice of Ask to invite you.
+            Helle: Welcome to the light and the love.
+            -> Thank you?
+            -> Um, do I...? Have we...?
+            Helle: See you around, okay?
+<<endif>>
+===

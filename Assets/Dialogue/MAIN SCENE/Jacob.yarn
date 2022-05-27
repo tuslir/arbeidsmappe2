@@ -1,0 +1,332 @@
+﻿title: Jacob_Start
+---
+//check if ending
+<<if visited("Ending_Apart")>>
+    <<jump Ending_Apart>>
+<<elseif visited ("Ending_Together")>>
+    <<jump Ending_Together>>
+
+<<elseif visited("Telling_Him_Option")>>
+    <<jump Telling_Him_Option>>
+<<elseif visited("To_Apologize_Option")>>
+    <<jump To_Apologize_Option>>
+
+<<elseif visited("On_His_Way_Option")>>
+    <<jump On_His_Way_Option>>
+<<elseif visited("Changed_His_Mind_Option")>>
+    <<jump Changed_His_Mind_Option>>
+
+<<elseif visited("Quadruple_Text_Option")>>
+    <<jump Quadruple_Text_Option>>
+
+<<elseif visited("Know_Helle")>>
+    <<jump Something_Bothering_Me>>
+
+<<elseif visited("Know_People_Option")>>
+    <<jump Know_People_Option>>
+
+<<elseif visited("Jacob_Start")>>
+    <<jump Love_That_You_Made_It>>
+
+<<else>>
+
+<i>Jacob's energy is a beam of light reaching the ceiling. 
+<i>Glitter applied thick onto the thin of his eyelids, his body moving in small bounces to the beat of the music. 
+
+Jacob: Holy shit you're here! In the flesh and everything!
+Jacob: Ask told me so much about you.
+Jacob: I'm Jacob. I love your flannell.
+
+    <<jump Love_That_You_Made_It>>
+<<endif>>
+===
+
+title: Love_That_You_Made_It
+---
+Jacob: Really love that you made it. Really love to see it.
+-> <color=\#A24384>I like your look tonight. <<if IsAsk()>>
+    <<jump Good_Mood>>
+-> Thanks, Jacob. 
+    Jacob: Hey, don't worry about it.
+        <<if visited("Enjoy_Yourself")>>
+            <<jump Enjoy_Yourself>>
+        <<else>>
+        Jacob: Listen, I've known Ask for a long time and any friend of theirs is a friend of mine, y'know?
+        Jacob: Like, ya know how pirates have codes? That one's mine.
+            <<jump Enjoy_Yourself>>
+        <<endif>>
+-> \[Exit conversation.\]
+===
+
+title: Enjoy_Yourself
+---
+Jacob: Enjoy yourself, alright?
+-> \[Exit conversation.\]
+===
+
+title: Good_Mood
+---
+Jacob: The night is beautiful and so am I. Haha!
+-> <color=\#A24384>How do you know people here? <<if IsAsk()>>
+    <<jump Know_People>>
+-> Alright.
+    <<jump Enjoy_Yourself>>
+-> \[Exit conversation.\]
+===
+
+title: Know_People
+---
+Jacob: These guys? From all over the place, I guess.
+    <<jump Know_People_Option>>
+===
+
+title: Know_People_Option
+---
+<<if visited("Know_People_Option")>>
+Jacob: Wondering about any one else? I mean, you've seen the crowd here. 
+<<else>>
+Jacob: Wondering about any one in particular? I mean, you've seen the crowd here. 
+<<endif>>
+-> <color=\#A24384>What about Helle?<<if IsAsk()>>
+    <<jump Know_Helle>>
+-> How do you know Ask?
+    Jacob: Oh, they've just been around forever.
+    Jacob: Friend of a friend.
+    Jacob: You know how it is.
+    Jacob: We've hung out a bunch, just the two of us.
+    Jacob: They always know how to have a good time. Throws the best parties.   
+        <<jump Know_People_Option>>
+-> You know Lisa well? <<if visited("Lisa_Start")>>
+    Jacob: Ice queen? I don't think she likes me much.
+    Jacob: Guess we just never got along.
+        <<jump Know_People_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Know_Ask
+---
+
+
+===
+
+title: Know_Helle
+---
+Jacob: Oh, Helle is my <i>girl</i>.
+Jacob: My best girl. You'll like her!
+Jacob: But not more than you'll like me, haha.
+    <<jump Something_Bothering_Me>>
+===
+
+title: Something_Bothering_Me
+---
+<i>He keeps looking over to the side, to a cellphone resting silent, black, on the arm of a couch.
+-> <color=\#A24384>Something bothering you?<<if IsAsk()>>
+    <<jump Some_Guy>>
+-> Cool. Thanks, Jacob.
+    Jacob: Sure thing.
+-> \[Exit conversation.\]
+===
+
+title: Some_Guy
+---
+Jacob: Huh? No. I'm good, dude! 
+Jacob: It's just. Well. Ugh. There's this guy.
+    <<jump Some_Guy_Option>>
+===
+
+title: Some_Guy_Option
+---
+Jacob: I don't know what to do about him.
+-> <color=\#A24384>Is he here? <<if IsAsk()>>
+    <<jump Hes_Not_Here>>
+-> Oh, I see.
+    Jacob: Yeah...
+        <<jump Some_Guy_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Hes_Not_Here
+---
+Jacob: No.
+    <<jump Hes_Not_Here_Option>>
+===
+
+title: Hes_Not_Here_Option
+---
+Jacob: That's the thing.
+-> <color=\#A24384>What thing? <<if IsAsk()>>
+    <<jump My_Stupid_BoyFriend>>
+-> Oh.
+    Jacob: Yep. 
+        <<jump Hes_Not_Here_Option>>
+-> \[Exit conversation.\]
+===
+
+title: My_Stupid_BoyFriend
+---
+Jacob: It's Tommy.
+Jacob: My stupid boyfriend.
+Jacob: I dunno. I guess we're fighitng?
+    <<jump My_Stupid_Boyfriend_Option>>
+===
+
+title: My_Stupid_Boyfriend_Option
+---
+Jacob: There's not really much else to say about it.
+-> <color=\#A24384>Why isn't he here, then? <<if IsAsk()>>
+    <<jump Quadruple_Text>>
+-> Um...
+    Jacob: Agreed.
+        <<jump My_Stupid_Boyfriend_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Quadruple_Text
+---
+Jacob: Ding ding ding!
+Jacob: That's the million dollar question.
+Jacob: He was supposed to be here but no one's seen him.
+Jacob: I've quadruple texted him and he still doesn't answer.
+    <<jump Quadruple_Text_Option>>
+===
+
+title: Quadruple_Text_Option
+---
+Jacob: He always does this.
+-> <color=\#A24384>He's probably on his way. <<if IsAsk()>>
+    <<jump On_His_Way>>
+-> <color=\#A24384>Maybe he changed his mind about coming? <<if IsAsk()>>
+    <<jump Changed_His_Mind>>
+-> Uh...
+    Jacob: Yeah, it's annoying.
+        <<jump Quadruple_Text_Option>>
+-> \[Exit conversation.\]
+===
+
+title: On_His_Way
+---
+Jacob: I mean, maybe?
+    <<jump On_His_Way_Option>>
+===
+
+title: On_His_Way_Option
+---
+Jacob: It just feels like he's avoiding me, somehow.
+-> <color=\#A24384>Just wait it out. <<if IsAsk()>>
+    <<jump Telling_Him>>
+-> <color=\#A24384>Did you apologize for the fight?<<if IsAsk()>>
+    <<jump To_Apologize>>
+-> Uh...
+    Jacob: I don't even know, anymore.
+        <<jump On_His_Way_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Telling_Him
+---
+Jacob: How long am I supposed to wait for him to get his shit together, then?
+Jacob: I mean, I've never told him this...
+Jacob: I've never told anyone this, but...
+    <<jump Telling_Him_Option>>
+===
+
+title: Telling_Him_Option
+---
+Jacob: I fucking love him.
+-> <color=\#A24384>You just told me. Now tell him. <<if IsAsk()>>
+    <<jump Ending1_Pre>>
+-> <color=\#A24384>It sounds more like you're annoyed by him.<<if IsAsk()>>
+    <<jump Ending2_Pre>>
+-> Uh, yeah.
+    Jacob: I get it's a lot, but...
+        <<jump On_His_Way_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Ending1_Pre
+---
+Jacob: It's that easy, huh?
+    <<jump Ending_Options>>
+===
+
+title: Ending_Options
+---
+Jacob: You know what? Maybe you're right.
+    <<if visited("Ending1_Pre")>>
+        <<jump Ending_Together>>
+    <<elseif visited("Ending2_Pre")>>
+        <<jump Ending_Apart>>
+    <<endif>>
+===
+
+title: To_Apologize
+---
+Jacob: How? With my <i>words</i>?
+Jacob: Sometimes, I swear, it's like I don't know how to talk to him.
+Jacob: He's so pretty and I go completely silent.
+    <<jump To_Apologize_Option>>
+===
+
+title: To_Apologize_Option
+---
+Jacob: I keep screwing everything up. 
+-> <color=\#A24384>Just because he's pretty doesn't mean he's worth your time. <<if IsAsk()>>
+    <<jump Ending2_Pre>>
+-> <color=\#A24384>Just take a deep breath and be brave.<<if IsAsk()>>
+    <<jump Ending1_Pre>>
+-> I, yeah...
+    Jacob: You don't get it, though.
+        <<jump To_Apologize_Option>>
+-> \[Exit conversation.\]
+===
+
+
+title: Changed_His_Mind
+---
+Jacob: I wish he told me if he found something better to do.
+Jacob: Or someone better.
+Jacob: It's pathetic, but...
+    <<jump Changed_His_Mind_Option>>
+===
+
+title: Changed_His_Mind_Option
+---
+Jacob: I just want to be with him all the time.
+-> <color=\#A24384>He probably wants the same thing. <<if IsAsk()>>
+    <<jump Telling_Him>>
+-> <color=\#A24384>Tell him that.<<if IsAsk()>>
+    <<jump To_Apologize>>
+-> Uh, yeah.
+    Jacob: Yeah, it sucks.
+        <<jump Changed_His_Mind_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Ending_Together
+---
+<<if visited("Ending_Together")>>
+Jacob: He better pick up soon. Or finally come over so I can kiss his stupid lips.
+<<else>>
+Jacob: I'm gonna have to tell him, right?
+<<jump Ending_Together>>
+<<endif>>
+===
+
+title: Ending_Apart
+---
+<<if visited("Ending_Apart")>>
+    Jacob: Stupid pretty boys, they'll only break your heart anyway, right?
+<<else>>
+    Jacob: Stupid pretty boys, they'll only break your heart anyway, right?
+    Jacob: Yeah, fuck him. I'm gonna break my phone into pieces, haha.
+    Jacob: Not really. But yeah. 
+<<endif>>
+===
+
+title: Ending2_Pre
+---
+Jacob: Yeah. It's just.
+Jacob: The way he looks at me, sometimes.
+Jacob: But...
+    <<jump Ending_Options>>
+===

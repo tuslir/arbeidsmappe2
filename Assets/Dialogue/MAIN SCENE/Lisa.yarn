@@ -1,0 +1,21 @@
+﻿title: Lisa_Start
+---
+<<if visited("Lisa_Start") && IsDefault()>>
+Lisa: Real cool. Check you later.
+<<elseif visited("Lisa_Start") && !IsDefault()>>
+Lisa: You taking in the sights?
+-> <color=\#A24384>How are you, Lisa?
+-> I mean, yeah, I'm here.
+<<else>>
+<i>About Lisa.
+Lisa: Oh, you're Ask's friend? 
+Lisa: Nice of you to show up. 
+Lisa: I'm Lisa.
+Lisa: You taking in the sights?
+-> I mean, yeah, I'm here.
+Lisa: The thing about walking into a room is owning it. 
+Lisa: That's not just something people talk about... They know these things.
+Lisa: But yeah, it's cool that you're here.
+Lisa: Real cool. Check you later.
+<<endif>>
+===

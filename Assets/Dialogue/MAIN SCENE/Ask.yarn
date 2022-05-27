@@ -23,9 +23,7 @@ Ask: Take your time. Nobody bites.
     -> Who's that girl over there?
 Ask: Who?
     -> The one with the striped shirt, worn shoes?
-        <<set $Striped_Shirt to true>>
-    -> The one staring at her phone?
-        <<set $Moon_Earrings to true>>
+    -> The one with the moon-shaped earrings?
 Ask: Yeah, that's Helle.
     -> She seems... familiar.
 Ask: She reminds me of you, a little bit.
@@ -82,7 +80,7 @@ Ask: I want us all to have fun.
 Ask: It's a fun night!
     -> Thanks, Ask.
 Ask: See you around, alright?
-<<wait 2>>
+<<wait 1>>
 <<ask_end>>
 
 ===
@@ -93,4 +91,5 @@ Ask: I want you to have fun tonight!
 Ask: I want us all to have fun.
 Ask: It's a fun night!
 Ask: See you around, alright?
+-> \[Exit conversation.\]
 ===

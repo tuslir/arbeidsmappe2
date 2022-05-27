@@ -37,6 +37,8 @@ public class YarnInteractable : MonoBehaviour
         dialogueRunner.onDialogueComplete.AddListener(EndConversation);
 
         lineView = FindObjectOfType<Yarn.Unity.LineView>();
+
+        //dialogueRunner.LoadStateFromPlayerPrefs(SaveKey: "YarnVariableSave");
     }
 
     //run dialogue from {conversationStartNode}
@@ -73,10 +75,9 @@ public class YarnInteractable : MonoBehaviour
 
     public void EndConversation()
     {
-
         if (isCurrentConversation) isCurrentConversation = false;
-
         if (conversationActive) conversationActive = false;
+        //dialogueRunner.SaveStateToPlayerPrefs(SaveKey: "YarnVariableSave");
 
     }
 
