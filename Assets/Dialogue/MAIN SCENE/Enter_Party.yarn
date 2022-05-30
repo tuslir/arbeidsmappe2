@@ -23,6 +23,6 @@ There's a lot of empty space between you and the rest of them.
 But Ask is here, a safe haven. For the past two years, they've known you better than you know yourself. 
 You barely make it through the door before they're on you. 
 Thankfully.
-<<wait 2>>
+<<wait 1>>
 <<intro_end>>
 ===

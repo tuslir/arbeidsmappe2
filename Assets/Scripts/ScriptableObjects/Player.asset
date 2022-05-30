@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   Name: Helle
-  Image: {fileID: -1868405784, guid: a8008d9728f438546ac3ee1c631435ab, type: 3}
+  Image: {fileID: 21300000, guid: 503c95ca1f510b343a2f0ff0ed14cbd6, type: 3}

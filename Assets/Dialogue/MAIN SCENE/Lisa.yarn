@@ -1,21 +1,407 @@
 ﻿title: Lisa_Start
 ---
-<<if visited("Lisa_Start") && IsDefault()>>
+<<if visited("Ending_Let_Them_Know")>>
+    <<jump Ending_Let_Them_Know>>
+
+<<elseif visited("Ending_Keep_The_Secret")>>
+    <<jump Ending_Keep_The_Secret>>
+
+<<elseif visited("They_Love_Me_Option")>>
+    <<jump They_Love_Me_Option>>
+
+<<elseif visited("Get_Out_Option")>>
+    <<jump Get_Out_Option>>
+
+<<elseif visited("Wait_It_Out_Option")>>
+    <<jump Wait_It_Out_Option>>
+
+<<elseif visited("Not_A_Word_Option")>>
+    <<jump Not_A_Word_Option>>
+
+<<elseif visited("Big_Blank_Space_Option")>>
+    <<jump Big_Blank_Space_Option>>
+
+<<elseif visited("Who_Cares_Option")>>
+    <<jump Who_Cares_Option>>
+
+<<elseif visited("Fairy_Tale_Option")>>
+    <<jump Fairy_Tale_Option>>
+
+<<elseif visited("Secret")>>
+    <<jump Secret>>
+
+<<elseif visited("Interested")>>
+    <<jump Interested>>
+
+<<elseif visited("Right_Questions")>>
+    <<jump Right_Questions>>
+
+<<elseif visited("Living_For_Today_Option")>>   
+    <<jump Living_For_Today_Option>>
+
+<<elseif visited("What_Im_Doing_Option")>>
+    <<jump What_Im_Doing_Option>>
+
+<<elseif visited("About_Us_Here_Option")>>
+    <<jump About_Us_Here_Option>>
+
+<<elseif visited("Doing_Good_Option")>>
+    <<jump Doing_Good_Option>>
+
+<<elseif visited("Lisa_Start") && !IsJacob()>>
 Lisa: Real cool. Check you later.
-<<elseif visited("Lisa_Start") && !IsDefault()>>
-Lisa: You taking in the sights?
--> <color=\#A24384>How are you, Lisa?
+
+<<elseif visited("Lisa_Start") && IsJacob()>>
+Lisa: You taking in the <color=\#37946E>sights</color>?
+-><sprite=2> <color=\#37946E>How are you, Lisa? <<if IsJacob()>>
+    <<jump Doing_Good>>
 -> I mean, yeah, I'm here.
+    <<jump Lisa_Start>>
+-> \[Exit conversation.\]
+
 <<else>>
-<i>About Lisa.
+<i>About Lisa. //WRITE THIS
 Lisa: Oh, you're Ask's friend? 
 Lisa: Nice of you to show up. 
 Lisa: I'm Lisa.
-Lisa: You taking in the sights?
+Lisa: You taking in the <color=\#37946E>sights</color>?
+-><sprite=2> <color=\#37946E>How are you, Lisa? <<if IsJacob()>>
+    <<jump Doing_Good>>
 -> I mean, yeah, I'm here.
 Lisa: The thing about walking into a room is owning it. 
 Lisa: That's not just something people talk about... They know these things.
 Lisa: But yeah, it's cool that you're here.
 Lisa: Real cool. Check you later.
 <<endif>>
+===
+
+title: Doing_Good
+---
+Lisa: Real sugar sweet. 
+Lisa: Got nothing to complain about.
+Lisa: The drinks are good, and the company... 
+Lisa: ...
+    <<jump Doing_Good_Option>>
+===
+
+title: Doing_Good_Option
+---
+Lisa: You got a drink yet?
+-><sprite=2> <color=\#37946E>I'm good for now. <<if IsJacob()>>
+    Lisa: Suit yourself.
+        <<jump About_Us_Here>>
+-><sprite=1> <color=\#A24384>Hell yeah, bring it! <<if IsAsk()>>
+    Lisa: Haha, cute.
+        <<jump About_Us_Here>>
+-> Umm...
+    Lisa: Come on, I don't bite.
+        <<jump Doing_Good_Option>>
+-> \[Exit conversation.\]
+===
+
+title: About_Us_Here
+---
+Lisa: Ask told us lots about you, you know.
+Lisa: I guess you got the numbers around here, too.
+Lisa: Not a lot of secrets. We're a sociable bunch.
+Lisa: Living for today.
+    <<jump About_Us_Here_Option>>
+===
+
+title: About_Us_Here_Option
+---
+Lisa: Better than a lot of <color=\#37946E>other places</color>, I'm sure.
+-><sprite=2> <color=\#37946E>So what are you up to?<<if IsJacob()>>
+    <<jump What_Im_Doing>>
+-><sprite=1> <color=\#A24384>It's like the VIP lounge. <<if IsAsk()>>
+    Lisa: I like that idea...
+        <<jump About_Us_Here_Option>>
+-> Yeah...
+    Lisa: Don't give me that look...
+        <<jump About_Us_Here_Option>>
+-> \[Exit conversation.\]
+===
+
+title: What_Im_Doing
+---
+Lisa: What? Me? Oh, you know.
+Lisa: Just nursing a glass of red...
+Lisa: Touching my necklace an obscure amount of times...
+    <<jump What_Im_Doing_Option>>
+===
+
+title: What_Im_Doing_Option
+---
+Lisa: Just thinking about <color=\#A24384>the future</color>...
+-><sprite=2> <color=\#37946E>Do you do that a lot?<<if IsJacob()>>
+    Lisa: Yeah, it's something of a hobby of mine.
+        <<jump What_Im_Doing_Option>>
+-><sprite=1> <color=\#A24384>What happened to living for today? <<if IsAsk()>>
+    <<jump Living_For_Today>>
+-> Oh, right.
+    Lisa: What? You need to speak up...
+        <<jump What_Im_Doing_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Living_For_Today
+---
+Lisa: Well, I'm here and it's a party, isn't it?
+Lisa: Every great party makes you question your place in the world, I think.
+    <<jump Living_For_Today_Option>>
+===
+
+title: Living_For_Today_Option
+---
+Lisa: That's just the way it's <color=\#A24384>supposed to be</color>. 
+-><sprite=2> <color=\#37946E>Sounds sad.<<if IsJacob()>>
+    Lisa: Not really.
+        <<jump Living_For_Today_Option>>
+-><sprite=1> <color=\#A24384>You ever get any answers? <<if IsAsk()>>
+    Lisa: Maybe. Depends...
+    <<jump Right_Questions>>
+-> Um...
+    Lisa: Yeah.
+        <<jump Living_For_Today_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Right_Questions
+---
+Lisa: Have you got the <color=\#A24384>right questions</color>?
+-><sprite=2> <color=\#37946E>What about Jacob? <<if IsJacob()>>
+    Lisa: Jacob who?
+    Lisa: I'm joking, I know Jacob.
+    Lisa: Kind of annoying, though? Like, he's one of those kids you kinda know from a distance...
+    Lisa: And then he started dating my brother. 
+    <<jump Right_Questions>>
+-><sprite=1> <color=\#A24384>What about Helle? <<if IsAsk()>>
+    <<jump Interested>>
+-> I don't know...
+    Lisa: I promise I can help.
+        <<jump Right_Questions>>
+-> \[Exit conversation.\]
+===
+
+title: Interested
+---
+Lisa: Helle, huh? Why, are you interested?
+-><sprite=2> <color=\#37946E>Umm... <<if IsJacob()>>
+    <<jump Lisa_About_Helle>>
+-><sprite=1> <color=\#A24384>Umm... <<if IsAsk()>>
+    <<jump Lisa_About_Helle>>
+-> Umm...
+    <<jump Lisa_About_Helle>>
+-> \[Exit conversation.\]
+===
+
+title: Lisa_About_Helle
+---
+Lisa: I'm just joking. Helle is cool.
+Lisa: Not to brag, but I probably know her better than anyone.
+Lisa: Then again I probably don't.
+Lisa: Either way, it's not really a compliment, or a prize. Not with her.
+Lisa: That's the whole problem with this town, isn't it?
+Lisa: That it knows you or it doesn't but there's no real difference?
+Lisa: Hey...
+    <<jump Secret>>
+===
+
+title: Secret
+---
+Lisa: Can I tell you a <color=\#37946E>secret</color>?
+-><sprite=2> <color=\#37946E>Yeah, of course. <<if IsJacob()>>
+    <<jump Fairy_Tale>>
+-><sprite=1> <color=\#A24384>Is it a good one? <<if IsAsk()>>
+    Lisa: No questions to my questions, no fair.
+        <<jump Secret>>
+-> Uh...
+    Lisa: What was that?
+        <<jump Secret>>
+-> \[Exit conversation.\]
+===
+
+title: Fairy_Tale
+---
+Lisa: I've got a bit of a problem.
+Lisa: Or it's a bit of a fairy tale.
+Lisa: Either way there's a big bad monster at the very end and it's...
+Lisa: ... the truth.
+    <<jump Fairy_Tale_Option>>
+===
+
+title: Fairy_Tale_Option
+---
+Lisa: Tonight might be the last time I see these people and <color=\#37946E>they don't even know it</color>.
+Lisa: I got into this school, see, but it's <color=\#A24384>three towns away</color>.
+Lisa: See the problem? 
+-><sprite=2> <color=\#37946E>Why keep it a secret? <<if IsJacob()>>
+    <<jump Who_Cares>>
+-><sprite=1> <color=\#A24384>The disappearance act. <<if IsAsk()>>
+    <<jump Big_Blank_Space>>
+-> Oh, wow...
+    Lisa: Yeah, right?
+        <<jump Fairy_Tale_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Who_Cares
+---
+Lisa: I guess it's just difficult to swallow. You know? 
+Lisa: Even for me.
+    <<jump Who_Cares_Option>>
+===
+
+title: Who_Cares_Option
+---
+Lisa: I don't know how to deal with this stuff while <color=\#37946E>everyone is watching</color>.
+Lisa: I just <color=\#A24384>want it for myself</color>.
+Lisa: Because, really... who really cares?
+-><sprite=2> <color=\#37946E>You don't think people will notice? <<if IsJacob()>>
+    <<jump Wait_It_Out>>
+-><sprite=1> <color=\#A24384>It's your decision, right? <<if IsAsk()>>
+    <<jump Not_A_Word>>
+-> I mean...
+    Lisa: No, it's true.
+        <<jump Who_Cares_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Big_Blank_Space
+---
+Lisa: Maybe that's what I'll call it.
+Lisa: I don't know. It's all a bit of a mess.
+    <<jump Big_Blank_Space_Option>>
+===
+
+title: Big_Blank_Space_Option
+---
+Lisa: Honestly, I've barely thought about it since <color=\#A24384>I accepted the spot</color>.
+Lisa: It's like there's a great <color=\#37946E>big blank space</color> in my head.
+Lisa: I don't know where I fit in.
+-><sprite=2> <color=\#37946E>Everyone feels like that sometimes. <<if IsJacob()>>
+    <<jump Not_A_Word>>
+-><sprite=1> <color=\#A24384>Have you told anyone? <<if IsAsk()>>
+    <<jump Wait_It_Out>>
+-> Yeah...
+    Lisa: You get it, right?
+    <<jump Big_Blank_Space_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Wait_It_Out
+---
+Lisa: I kinda just want to wait it out and see what happens.
+    <<jump Wait_It_Out_Option>>
+===
+
+title: Wait_It_Out_Option
+---
+Lisa: I'm not really scared of <color=\#37946E>their reaction</color>, not really.
+Lisa: It's the potential <color=\#A24384>lack thereof</color>, you know?
+Lisa: Like, their lives won't change but mine will change tremendeously. 
+-><sprite=2> <color=\#37946E>Everyone's lives will change anyway. <<if IsJacob()>>
+    <<jump Get_Out>>
+-><sprite=1> <color=\#A24384>You don't know that for sure.<<if IsAsk()>>
+    <<jump They_Love_Me>>
+-> Well...
+    Lisa: It's terrifying, really.
+        <<jump Wait_It_Out_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Not_A_Word
+---
+Lisa: Yeah. And they'll be fine. 
+Lisa: I know I'll be, too.
+    <<jump Not_A_Word_Option>>
+===
+
+title: Not_A_Word_Option
+---
+Lisa: It can't be <color=\#37946E>that bad</color>.
+Lisa: Maybe I was always meant to disappear in a <color=\#A24384>puff of smoke</color>.
+Lisa: When I was younger, I wanted to be a magician's apprentice...
+-><sprite=2> <color=\#37946E>People here love you, Lisa.<<if IsJacob()>>
+    <<jump They_Love_Me>>
+-><sprite=1> <color=\#A24384>Stealth away like an alleycat, nice.<<if IsAsk()>>
+    <<jump Get_Out>>
+-> Umm...
+    <<jump Not_A_Word_Option>>
+-> \[Exit conversation.\]
+===
+
+title: They_Love_Me
+---
+Lisa: No, but...
+Lisa: God, I love them but they terrify me.
+    <<jump They_Love_Me_Option>>
+===
+
+title: They_Love_Me_Option
+---
+Lisa: The <color=\#A24384>thought of leaving them</color>.
+Lisa: That's why I can't even <color=\#37946E>speak it into existence</color>.
+Lisa: Do you really think it will be okay?
+-><sprite=2> <color=\#37946E>Yeah, you should tell them. <<if IsJacob()>>
+    <<jump Ending_Let_Them_Know>>
+-><sprite=1> <color=\#A24384>Let's stop and think about this.<<if IsAsk()>>
+    Lisa: What's there to think about?
+    <<jump Wait_It_Out_Option>>
+-> I don't know...
+    Lisa: Please, just tell me...
+        <<jump Wait_It_Out_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Get_Out
+---
+Lisa: Yeah.
+Lisa: It can't be too bad, right? People do this.
+    <<jump Get_Out_Option>>
+===
+
+title: Get_Out_Option
+---
+Lisa: It's okay to live your life <color=\#A24384>for yourself alone</color>.
+Lisa: It will be better like this and they will <color=\#37946E>forgive me eventually</color>.
+Lisa: Like, I'm not hogging all the wine here. You're just the one who didn't have any.
+-><sprite=2> <color=\#37946E>Wait a second... <<if IsJacob()>>
+    Lisa: What?
+    <<jump Not_A_Word_Option>>
+-><sprite=1> <color=\#A24384>Yeah, they'll get it.<<if IsAsk()>>
+    <<jump Ending_Keep_The_Secret>>
+-> Hm...
+    Lisa: Right?
+        <<jump Get_Out_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Ending_Let_Them_Know
+---
+<<if visited("Ending_Let_Them_Know")>> 
+Lisa: I'll make sure to tell them before I go.
+<<else>>
+Lisa: ...
+Lisa: You're right and I know it.
+Lisa: I feel it in my bones.
+Lisa: That's the annoying part.
+Lisa: But everything's annoying like that: living up to yourself... Whatever that means.
+Lisa: But...
+Lisa: I'll make sure to tell them before I go.
+<<endif>>
+===
+
+title: Ending_Keep_The_Secret
+---
+<<if visited("Ending_Let_Them_Know")>> 
+Lisa: There's still some night to go, right?
+<<else>>
+Lisa: Yeah. If they know me, they'll get it.
+Lisa: And it really isn't so difficult.
+Lisa: It's a nice life here; it will be a nice life still.
+Lisa: Besides...
+Lisa: There's still some night to go, right?
+<<endif>>
+
 ===

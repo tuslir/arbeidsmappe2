@@ -1,5 +1,5 @@
 ﻿title: Unlocked_Ask
----
+--- 
 <<stop_time>>
 <i>Well, it's a party.
 <i>Here is the night, long and open, sticky-sweet.
@@ -22,4 +22,16 @@
 \[You can always exit a conversation and try another way.\]
 \[Explore your options, and enjoy the party.\]
 <<reset_time>>
+===
+
+title: Unlocked_Jacob
+---
+...
+<i>The conversation leaves you buzzing, the impact.
+<i>Jacob shoves a drink into your hand as thanks.
+<i>You feel floating, almost. Someone's wings rubbing off on you.
+<i>The night goes on.
+...
+\[You have unlocked <color=\#37946E>JACOB'S TOKEN</color>.\]
+<<unlock_jacob>>
 ===
