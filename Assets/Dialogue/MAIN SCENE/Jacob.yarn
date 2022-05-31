@@ -319,13 +319,13 @@ title: Ending_Apart
 ---
 <<if visited("Ending_Apart")>>
     Jacob: Stupid pretty boys, they'll only break your heart anyway, right?
-        <<if !visited("Unlocked_Jacob")>>
-        <<jump Unlocked_Jacob>>
-        <<endif>>
 <<else>>
     Jacob: Stupid pretty boys, they'll only break your heart anyway, right?
     Jacob: Yeah, fuck him. I'm gonna break my phone into pieces, haha.
     Jacob: Not really. But yeah. 
+        <<if !visited("Unlocked_Jacob")>>
+        <<jump Unlocked_Jacob>>
+        <<endif>>
 <<endif>>
 ===
 

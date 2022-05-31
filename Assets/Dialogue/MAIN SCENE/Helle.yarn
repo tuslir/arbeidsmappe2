@@ -1,12 +1,68 @@
 ﻿title: Helle_Start
 ---
-<<if visited("Helle_Start") && IsDefault()>>
-    Helle: See you around, okay?
-<<elseif visited("Helle_Start") && !IsDefault()>>
-Helle: Hi.
--> <color=\#A24384>I like your look tonight. <<if IsAsk()>>
--> Um, hi. 
+<<if visited("A_Place_To_Go_Option")>>
+    <<jump A_Place_To_Go_Option>>
+
+<<elseif visited("Memory_Of_February_Option")>>
+    <<jump Memory_Of_February_Option>>
+
+<<elseif visited("Love_And_Hate_Option")>>
+    <<jump Love_And_Hate_Option>>
+
+<<elseif visited("Suffocating_Here_Option")>>
+    <<jump Suffocating_Here_Option>>
+
+<<elseif visited("Really_Cant_Tell_Option")>>
+    <<jump Really_Cant_Tell_Option>>
+
+<<elseif visited("Moon_Gets_Out_Option")>>
+    <<jump Moon_Gets_Out_Option>>
+
+<<elseif visited("Cant_Recall_Option")>>
+    <<jump Cant_Recall_Option>>
+
+<<elseif visited("Different_In_The_End_Option")>>
+    <<jump Different_In_The_End_Option>>
+
+<<elseif visited("Underground_Or_Tree_Option")>> 
+    <<jump Underground_Or_Tree_Option>>
+
+<<elseif visited("Was_A_Dream")>>
+    <<jump Was_A_Dream>>
+
+<<elseif visited("I_Know_You_Option")>>
+    <<jump I_Know_You_Option>>
+
+<<elseif visited("The_Sun_Option")>>
+    <<jump The_Sun_Option>>
+
+<<elseif visited("The_Moon_Option")>>
+    <<jump The_Moon_Option>>
+
+<<elseif visited("Sun_Or_Moon_Option")>>
+    <<jump Sun_Or_Moon_Option>>
+
+<<elseif visited("Like_Your_Shirt_Option")>>
+    <<jump Like_Your_Shirt_Option>>
+
 <<else>>
+<<jump Helle_Hi>>
+<<endif>>
+===
+
+title: Helle_Hi
+---
+<<if visited("Helle_Hi") && !IsLisa()>>
+    Helle: See you around, okay?
+
+<<elseif IsLisa()>>
+Helle: Hi.
+-> <color=\#A22F2f>Helle, right? <<if IsLisa()>>
+    <<jump Like_Your_Shirt>>
+-> Um, hi. 
+    Helle: See you around, okay?
+-> \[Exit conversation.\]
+<<elseif !visited("Helle_Hi") && !IsLisa()>>
 <i>About Helle.
 Helle: Hi.
 -> Um, hi. 
@@ -19,5 +75,582 @@ Helle: Hi.
             -> Thank you?
             -> Um, do I...? Have we...?
             Helle: See you around, okay?
+-> \[Exit conversation.\]
 <<endif>>
+===
+
+title: Like_Your_Shirt
+---
+Helle: Yeah, that's me. 
+Helle: You're Ask's friend?
+<<jump Like_Your_Shirt_Option>>
+===
+
+title: Like_Your_Shirt_Option
+---
+<<if visited("Like_Your_Shirt_Option")>>
+Helle: ...
+Helle: <color=\#A22F2f>Cool</color>.
+-><sprite=1> <color=\#A24384>It's nice to meet you. <<if IsAsk()>>
+    Helle: Likewise. I can tell you fit in here.
+    <<jump Like_Your_Shirt_Option>>
+-><sprite=2> <color=\#37946E>I like yours, too. <<if IsJacob()>>
+    Helle: Thanks. It's not mine.
+    <<jump Like_Your_Shirt_Option>>
+-><sprite=3> <color=\#A22F2f>Thanks. How do you like the party? <<if IsLisa()>>
+    <<jump Sun_Or_Moon>>
+-> Um...
+    <<jump Like_Your_Shirt_Option>>
+-> \[Exit conversation.\]
+
+<<else>>
+Helle: ...
+Helle: I like <color=\#A22F2f>your shirt</color>.
+-><sprite=1> <color=\#A24384>It's nice to meet you. <<if IsAsk()>>
+    Helle: Likewise. I can tell you fit in here.
+    <<jump Like_Your_Shirt_Option>>
+-><sprite=2> <color=\#37946E>I like yours, too. <<if IsJacob()>>
+    Helle: Thanks. It's not mine.
+    <<jump Like_Your_Shirt_Option>>
+-><sprite=3> <color=\#A22F2f>Thanks. How do you like the party? <<if IsLisa()>>
+    <<jump Sun_Or_Moon>>
+-> Um...
+    <<jump Like_Your_Shirt_Option>>
+-> \[Exit conversation.\]
+<<endif>>
+===
+
+title: Sun_Or_Moon
+---
+Helle: Oh, I like it.
+Helle: I mean, it's a nice time, isn't it?
+Helle: The evening time.
+Helle: Hey.
+<<jump Sun_Or_Moon_Option>>
+===
+
+title: Sun_Or_Moon_Option
+---
+Helle: Do you like the <color=\#37946E>sun</color> or the <color=\#A24384>moon</color> better? 
+-><sprite=1> <color=\#A24384>The moon.<<if IsAsk()>>
+    <<jump The_Moon>>
+-><sprite=2> <color=\#37946E>The sun. <<if IsJacob()>>
+    <<jump The_Sun>>
+-><sprite=3> <color=\#A22F2f>The stars, in-between. <<if IsLisa()>>
+    Helle: Don't dodge the question! This is important.
+    <<jump Sun_Or_Moon_Option>>
+-> I don't know...
+    Helle: Oh, come on...
+    <<jump Sun_Or_Moon_Option>>
+-> \[Exit conversation.\]
+===
+
+title: The_Sun
+---
+Helle: Bright and scorching hot. I feel the need to hide most days.
+<<jump The_Sun_Option>>
+===
+
+title: The_Sun_Option
+---
+Helle: One time I believed <color=\#37946E>in a world</color> where the sun would never set.
+Helle: I'd <color=\#A22F2f>like to go</color> somewhere like that.
+Helle: Must be nice, wherever it is.
+-><sprite=1> <color=\#A24384>Head south, like the birds.<<if IsAsk()>>
+    Helle: I like that idea.
+    <<jump The_Sun_Option>>
+-><sprite=2> <color=\#37946E>Does a place like that even exist?<<if IsJacob()>>
+    <<jump A_Real_Place>>
+-><sprite=3> <color=\#A22F2f>You're really thinking about leaving?<<if IsLisa()>>
+    Helle: Maybe? No? I don't know.
+    Helle: Right now? It's a party.
+    Helle: You ever feel stuck somewhere? Like gravel in dirt.
+    Helle: I just always used to think there were more things to see.
+    <<jump Was_A_Dream>>
+-> Umm...
+    Helle: You know what I mean.
+    <<jump The_Sun_Option>>
+-> \[Exit conversation.\]
+===
+
+title: The_Moon
+---
+Helle: I think I agree!
+Helle: It's more of a friendly presence.
+<<jump The_Moon_Option>>
+===
+
+title: The_Moon_Option
+---
+Helle: Someone you can <color=\#A22F2f>look at</color>, and really <color=\#A24384>get to know</color>. 
+Helle: How many people do you ever really get to know, right? 
+-><sprite=1> <color=\#A24384>I feel like I know you from somewhere.<<if IsAsk()>>
+    <<jump I_Know_You>>
+-><sprite=2> <color=\#37946E>Only those who really get to know us. <<if IsJacob()>>
+    Helle: Now that's a scary thought.
+    <<jump The_Moon_Option>>
+-><sprite=3> <color=\#A22F2f>Nobody, really.<<if IsLisa()>>
+    Helle: Yeah, I get that feeling.
+    Helle: Sometimes I wonder if it ever gets real.
+    <<jump A_Real_Place>>
+-> Hm...
+    Helle: I mean, like...
+    <<jump The_Moon_Option>>
+-> \[Exit conversation.\]
+===
+
+title: I_Know_You
+---
+Helle: I don't know. Do you?
+Helle: ...
+<<jump I_Know_You_Option>>
+===
+
+title: I_Know_You_Option
+---
+Helle: <color=\#A22F2f>A lot of people</color> in this town, I guess, <color=\#37946E>coming and going</color>.
+Helle: What do you recall?
+-><sprite=1> <color=\#A24384>I'm almost certain there was something.<<if IsAsk()>>
+    Helle: Really think about it?
+    <<jump I_Know_You_Option>>
+-><sprite=2> <color=\#37946E>Two years ago, maybe...<<if IsJacob()>>
+    Helle: We'd both be a lot different then.
+    Helle: I know I was.
+    <<jump Was_A_Dream>>
+-><sprite=3> <color=\#A22F2f>I saw you by accident, I think...<<if IsLisa()>>
+    Helle: Must have been.
+    Helle: You saw me or I saw you.
+    <<jump Was_A_Dream>>
+-> I don't know...
+    Helle: Really think about it?
+    <<jump I_Know_You_Option>>
+-> \[Exit conversation.\]
+===
+
+title: A_Real_Place
+---
+Helle: I feel like it does? I've seen it in photos.
+Helle: The people in the photos, they're always smiling...
+Helle: The sky is always cotton candy-pink... It's like a dream.
+<<jump Was_A_Dream>>
+===
+
+
+
+
+
+
+
+
+
+title: Was_A_Dream
+---
+Helle: But, you know, it's probably <color=\#A24384>nothing</color>.
+Helle: Looking <color=\#37946E>inward</color>.
+Helle: That's <color=\#A22F2f>all I see</color>.
+Helle: It was probably a dream.
+-><sprite=1> <color=\#A24384>You really don't remember?<<if IsAsk()>>
+    <<jump Cant_Recall>>
+-><sprite=2> <color=\#37946E>How long have you been having these thoughts?<<if IsJacob()>>
+    <<jump Different_In_The_End>>
+-><sprite=3> <color=\#A22F2f>I have dreams like that too.<<if IsLisa()>>
+    <<jump Underground_Or_Tree>>
+-> Um...
+    <<jump Was_A_Dream>>
+-> \[Exit conversation.\]
+===
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+title: Cant_Recall
+---
+Helle: Huh, let's see, then.
+Helle: Stand up a bit? Maybe I remember you that way.
+<<jump Cant_Recall_Option>>
+===
+
+title: Cant_Recall_Option
+---
+Helle: I'm <color=\#A24384>not sure</color>? 
+Helle: But Ask said <color=\#A22F2f>I'd like you</color>.
+Helle: That <color=\#37946E>doesn't count</color> if I already know you. So.
+Helle: What do you think? 
+-><sprite=1> <color=\#A24384>Maybe it really was a dream.<<if IsAsk()>>
+    Helle: It really could be. All of this, right?
+    Helle: Honestly, the floating-through-life... It's a bit bullshit, isn't it?
+    <<jump Suffocating_Here>>
+-><sprite=2> <color=\#37946E>I'm probably mistaken.<<if IsJacob()>>
+    Helle: Yeah, maybe.
+    Helle: I mean, there's a lot of people.
+    Helle: Here, in the room... Here, in the world.
+    Helle: A lot of space.
+    <<jump Moon_Gets_Out>>
+-><sprite=3> <color=\#A22F2f>I think I remember something.<<if IsLisa()>>
+    Helle: Yeah? There's that feeling again, isn't it?
+    Helle: Like this is something familiar. We might have been standing exactly here, exactly like this...
+    Helle: Me, like this... My shirt was tied around my waist.
+    <<jump Really_Cant_Tell>>
+-> Um...
+    <<jump Was_A_Dream>>
+-> \[Exit conversation.\]
+===
+
+title: Different_In_The_End
+---
+Helle: For a while, but it's not important.
+<<jump Different_In_The_End_Option>>
+===
+
+title: Different_In_The_End_Option
+---
+Helle: I <color=\#A24384>don't even know</color> if there's really <color=\#A22F2f>anywhere to go</color>.
+Helle: Somewhere that would feel <color=\#37946E>different</color> in the end, you know?
+Helle: Like, it's all the same anyway.
+-><sprite=1> <color=\#A24384>It would be different at the edge of the world. <<if IsAsk()>>
+    Helle: Yeah! That's what we need, you know?
+    Helle: Somewhere new, somewhere entirely new.
+    Helle: Never before seen, by anyone.
+    <<jump Moon_Gets_Out>>
+-><sprite=2> <color=\#37946E>Eventually it's all going to be familiar.<<if IsJacob()>>
+    Helle: Familiar, like the weight of a necklace around your neck.
+    Helle: I mean, I see what Ask was talking about now. You seem familiar.
+    Helle: Your voice just now...
+    <<jump Really_Cant_Tell>>
+-><sprite=3> <color=\#A22F2f>Why not stay?<<if IsLisa()>>
+    Helle: Didn't I just give a thousand reasons?
+    Helle: A single one would be enough, right?
+    <<jump Suffocating_Here>>
+-> Um...
+    Helle: Yeah, I know.
+    <<jump Different_In_The_End_Option>>
+-> \[Exit conversation.\]
+===
+
+
+title: Underground_Or_Tree
+---
+Helle: Yeah?
+<<jump Underground_Or_Tree_Option>>
+===
+
+title: Underground_Or_Tree_Option
+---
+Helle: Ever have those dreams where you're someone else or somewhere else?
+Helle: Or <color=\#A24384>something else entirely</color>, like a cat or a bear.
+Helle: Here's a question: Would you live <color=\#A22F2f>underground</color> or at the <color=\#37946E>top of a tree</color>?
+Helle: Be honest.
+-><sprite=1> <color=\#A24384>Haven't you asked me this before? <<if IsAsk()>>
+    Helle: Oh. Have I? Maybe I have.
+    Helle: Not tonight, though.
+    Helle: That must have been another night.
+	<<jump Really_Cant_Tell>>
+-><sprite=2> <color=\#37946E>Top of a tree.<<if IsJacob()>>
+    Helle: Oh, yeah, right answer! Right to the top.
+    Helle: Just living out of a little hut up there.
+    Helle: And the moon...
+	<<jump Moon_Gets_Out>>
+-><sprite=3> <color=\#A22F2f>I'd live underground.<<if IsLisa()>>
+    Helle: Wow! I don't think I could.
+    Helle: You really have to get up there, I think, to see the world.
+    Helle: You know, for what it is.
+	<<jump Suffocating_Here>>
+-> Not sure...
+    Helle: What?
+	<<jump Underground_Or_Tree_Option>>
+-> \[Exit conversation.\]
+===
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+title: Really_Cant_Tell
+---
+Helle: It's strange. I really can't tell.
+<<jump Really_Cant_Tell_Option>>
+===
+
+title: Really_Cant_Tell_Option
+---
+Helle: Is it <color=\#37946E>the air</color>? In the water?
+Helle: What <color=\#A24384>time of day</color>? Did you see my whole face or <color=\#A22F2f>just a shadow</color>?
+Helle: I'm trying to figure it out.
+-><sprite=1> <color=\#A24384>It was bright daylight, a lot of people were outside.<<if IsAsk()>>
+    Helle: I don't know, I don't think so.
+    Helle: I can't look at people in the daylight, they shine so bright.
+    Helle: If my eyes could get used to the light, then maybe.
+    Helle: But maybe it doesn't matter.
+	<<jump A_Place_To_Go>>
+-><sprite=2> <color=\#37946E>The air in here is making it hard to think.<<if IsJacob()>>
+    Helle: It might just be the drinks, but...
+    Helle: Is the ceiling spinning to you?
+    Helle: Or is it wishful thinking?
+	<<jump Love_And_Hate>>
+-><sprite=3> <color=\#A22F2f>It was dark out, and we were alone.<<if IsLisa()>>
+    Helle: That might be it.
+    Helle: Yeah, you know what, you might be onto something.
+	<<jump Memory_Of_February>>
+-> Uh...
+	<<jump Really_Cant_Tell_Option>>
+-> \[Exit conversation.\]
+===
+
+title: Suffocating_Here
+---
+<<jump Suffocating_Here_Option>>
+===
+
+title: Suffocating_Here_Option
+---
+Helle: It's a bit <color=\#37946E>strange</color>, it's a bit <color=\#A22F2f>fantastical</color>.
+Helle: And it's really <color=\#A24384>fucking sad sometimes</color>.
+Helle: Like, open up a window. I'm suffocating here! 
+-><sprite=1> <color=\#A24384>Pretty sure I've read that line in my diary before. <<if IsAsk()>>
+    Helle: Alright, I'm being dramatic...
+	<<jump Memory_Pre>>
+-><sprite=2> <color=\#37946E>You should go get some air.<<if IsJacob()>>
+    Helle: Yeah, nice and cold.
+    Helle: It's such a nice night.
+    Helle: Or it could be, somewhere.
+	<<jump Love_And_Hate>>
+-><sprite=3> <color=\#A22F2f>I'll take you out.<<if IsLisa()>>
+	<<jump Place_Pre>>
+-> Oh, okay.
+    Helle: Am I right?
+	<<jump Suffocating_Here_Option>>
+-> \[Exit conversation.\]
+===
+
+
+title: Moon_Gets_Out
+---
+Helle: Somewhere where the moon is close enough to kiss.
+<<jump Moon_Gets_Out_Option>>
+===
+
+title: Moon_Gets_Out_Option
+---
+Helle: Honestly I <color=\#37946E>just feel like</color> I need to <color=\#A22F2f>get out</color>.
+Helle: Of my skin, of this <color=\#A24384>whole town</color>.
+Helle: Or I'm gonna be stuck here forever.
+-><sprite=1> <color=\#A24384>Won't everybody wonder where you went?<<if IsAsk()>>
+    Helle: Maybe? Or maybe not. Take a bet.
+    Helle: It would be nice, I guess, to have someone look.
+    Helle: But at the same time, they know me. I'm a big girl.
+	<<jump Love_And_Hate>>
+-><sprite=2> <color=\#37946E>I had that feeling once.<<if IsJacob()>>
+	<<jump Memory_Pre>>
+-><sprite=3> <color=\#A22F2f>Out where, exactly?<<if IsLisa()>>
+    Helle: Right now? Just anywhere will do.
+    Helle: But I'm not coming back.
+	<<jump Place_Pre>>
+-> Right...
+    Helle: Don't make fun.
+	<<jump Moon_Gets_Out_Option>>
+-> \[Exit conversation.\]
+===
+
+
+
+
+
+
+
+
+
+title: Memory_Pre
+---
+Helle: You feel it too, right?
+Helle: We might've been exactly here, at a different time.
+<<jump Memory_Of_February>>
+===
+
+
+title: Place_Pre
+---
+Helle: I think I saw a movie like this, once...
+Helle: Heading out into the night with a stranger.
+Helle: If you hold my hand, I'll come with you.
+Helle: But only if you promise.
+<<jump A_Place_To_Go>>
+===
+
+
+title: A_Place_To_Go
+---
+Helle: I know a place we could go.
+<<jump A_Place_To_Go_Option>>
+===
+
+title: A_Place_To_Go_Option
+---
+Helle: <color=\#A24384>You and me</color>, right now.
+Helle: No <color=\#37946E>questions</color> asked, not <color=\#A22F2f>anymore</color>.
+Helle: Just head out and be gone.
+-><sprite=1> <color=\#A24384>I'm tired of questions, too. <<if IsAsk()>>
+    Helle: Yeah, me too. 
+    Helle: Come on, hand.
+    Helle: The others might notice...
+	<<jump Ending_Leaving_Together>>
+-><sprite=2> <color=\#37946E>Wait, deja vú. You've said this before.<<if IsJacob()>>
+    Helle: I might have?
+    Helle: How about this...
+    Helle: We've both been living here, it seems statistically impossible that we haven't met, right?
+	<<jump Ending_I_Remember_You>>
+-><sprite=3> <color=\#A22F2f>No, actually, I don't want to leave.<<if IsLisa()>>
+    Helle: Oh, right.
+    Helle: It's just like that?
+    Helle: That's fine. This is just one night out of many...
+	<<jump Ending_Leave_Alone>>
+-> Yeah?
+    Helle: How about it?
+	<<jump A_Place_To_Go_Option>>
+-> \[Exit conversation.\]
+===
+
+
+title: Love_And_Hate
+---
+Helle: It's not that I hate it here, you know.
+<<jump Love_And_Hate_Option>>
+===
+
+title: Love_And_Hate_Option
+---
+Helle: I love it. I love <color=\#A22F2f>these people</color>.
+Helle: But I also <color=\#37946E>hate it here</color>.
+Helle: Everything tastes stale, like <color=\#A24384>an old room</color>.
+Helle: It's too easy to get stuck.
+-><sprite=1> <color=\#A24384>It doesn't have to be so bad. It could be nice. <<if IsAsk()>>
+    Helle: Like a haunted house is nice, I guess.
+    Helle: Makes you feel right at home.
+    Helle: Ghosts don't wanna leave either. Or they just can't.
+	<<jump Ending_Leave_Alone>>
+-><sprite=2> <color=\#37946E>This place is holding you down.<<if IsJacob()>>
+    Helle: Yeah, to be honest, I'm over it.
+    Helle: You know what? Let's get out.
+    Helle: There's dust on the cuffs of my jeans...
+	<<jump Ending_Leaving_Together>>
+-><sprite=3> <color=\#A22F2f>I get like this, too.<<if IsLisa()>>
+    Helle: Yeah.
+    Helle: Everything has already happened.
+    Helle: And it's happening right now.
+	<<jump Ending_I_Remember_You>>
+-> Yeah.
+    Helle: I've been saying it for ages...
+	<<jump Love_And_Hate_Option>>
+-> \[Exit conversation.\]
+===
+
+
+title: Memory_Of_February
+---
+Helle: It was a February, wasn't it? Two years ago...
+<<jump Memory_Of_February_Option>>
+===
+
+title: Memory_Of_February_Option
+---
+Helle: You passed by <color=\#A24384>on your bike</color>. You were <color=\#A22F2f>by yourself</color>.
+Helle: I was alone in the parking lot <color=\#37946E>that night</color>.
+Helle: I had been crying, I think?
+-><sprite=1> <color=\#A24384>I saw you there, randomly. <<if IsAsk()>> 
+    Helle: Yeah, I didn't know you. And you didn't know me.
+    Helle: We were both just there.
+    Helle: You let me borrow your phone...
+	<<jump Ending_I_Remember_You>>
+-><sprite=2> <color=\#37946E>No... I don't think that was me.<<if IsJacob()>>
+    Helle: Oh.
+    Helle: No, you're right.
+    Helle: It could've been anyone.
+    Helle: Maybe they're still out there and you're still in here.
+	<<jump Ending_Leave_Alone>>
+-><sprite=3> <color=\#A22F2f>That's not how I remember it.<<if IsLisa()>>
+    Helle: Oh. Right.
+    Helle: I guess you're right.
+	<<jump Ending_Leaving_Together>>
+-> Maybe...
+    Helle: No, really...
+	<<jump Memory_Of_February_Option>>
+-> \[Exit conversation.\]
+===
+
+
+
+
+
+
+
+
+title: Ending_I_Remember_You
+---
+Helle: I remember you now.
+Helle: Yeah.
+Helle: I've seen your face before.
+Helle: You're Rebecca.
+Helle: ...
+//LEAVING TOGETHER ENDING
+===
+
+
+title: Ending_Leave_Alone
+---
+Helle: But it's getting too late now.
+Helle: I'm not looking to become a ghost.
+Helle: I'm gonna have a cigarette and then I'm gone.
+Helle: It was nice talking to you, I guess.
+Helle: Give my love to the rest of them.
+//LEAVING ALONE ENDING
+===
+
+title: Ending_Leaving_Together
+---
+Helle: But it doesn't matter.
+-> I'm Rebecca.
+Helle: Rebecca.
+Helle: Listen, this place and me, we're over, I think.
+Helle: But there are other places.
+Helle: And there are other people, aren't there, Rebecca?
+Helle: A nice name. A nice night.
+Helle: ...
+Helle: Come on. Let's get out of here.
+//LEAVING TOGETHER ENDING.
 ===

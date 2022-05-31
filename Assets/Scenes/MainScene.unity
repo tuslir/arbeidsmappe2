@@ -1005,7 +1005,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1909503657}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2450,6 +2450,10 @@ PrefabInstance:
       propertyPath: optionViewPrefab
       value: 
       objectReference: {fileID: 1847629810}
+    - target: {fileID: 3292657645895612466, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+      propertyPath: showUnavailableOptions
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3292657645953925573, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -4312,7 +4316,6 @@ GameObject:
   - component: {fileID: 1890826721}
   - component: {fileID: 1890826722}
   - component: {fileID: 1890826723}
-  - component: {fileID: 1890826724}
   m_Layer: 0
   m_Name: COVER
   m_TagString: COVER
@@ -4413,22 +4416,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1890826724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890826720}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a07e31abcbcfd1c469b38f451eb94bca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversationStartNode: 
-  image: {fileID: 147930652}
-  characterSpeaking: {fileID: 11400000, guid: 35ad4b7088febe9439fc1f2244cdf274, type: 2}
-  hidePortrait: {fileID: 11400000, guid: 35ad4b7088febe9439fc1f2244cdf274, type: 2}
 --- !u!1 &1909503653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4525,8 +4512,8 @@ RectTransform:
   - {fileID: 2051003435}
   - {fileID: 1333965033}
   - {fileID: 1931013806}
-  - {fileID: 1399984630}
   - {fileID: 575759248}
+  - {fileID: 1399984630}
   - {fileID: 1498641880}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -5250,6 +5237,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1909503657}
     m_Modifications:
+    - target: {fileID: 973342556286666662, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
+      propertyPath: m_TagString
+      value: LisaToken
+      objectReference: {fileID: 0}
+    - target: {fileID: 973342556286666664, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 973342556286666664, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5280,7 +5275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 973342556489792918, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 973342556489792918, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5364,11 +5359,11 @@ PrefabInstance:
       objectReference: {fileID: 415138954}
     - target: {fileID: 973342556739716743, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
       propertyPath: m_TagString
-      value: UnlockedToken
+      value: JacobToken
       objectReference: {fileID: 0}
     - target: {fileID: 973342556739716745, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
       propertyPath: m_Interactable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 973342556739716745, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

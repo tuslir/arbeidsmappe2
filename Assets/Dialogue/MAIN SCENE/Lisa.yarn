@@ -1,6 +1,12 @@
 ﻿title: Lisa_Start
 ---
-<<if visited("Ending_Let_Them_Know")>>
+<<if $wait_not_a_word is true>>
+    <<jump Not_A_Word_Option>>
+
+<<elseif $wait_wait_it_out is true>>
+    <<jump Wait_It_Out_Option>>
+
+<<elseif visited("Ending_Let_Them_Know")>>
     <<jump Ending_Let_Them_Know>>
 
 <<elseif visited("Ending_Keep_The_Secret")>>
@@ -60,7 +66,8 @@ Lisa: You taking in the <color=\#37946E>sights</color>?
 -> \[Exit conversation.\]
 
 <<else>>
-<i>About Lisa. //WRITE THIS
+<i>Layers of pearl necklaces, eyeliner applied with a knife.
+<i>Lisa holds a glass of wine in one hand, and extends the other one to you lazily. 
 Lisa: Oh, you're Ask's friend? 
 Lisa: Nice of you to show up. 
 Lisa: I'm Lisa.
@@ -340,6 +347,8 @@ Lisa: God, I love them but they terrify me.
 
 title: They_Love_Me_Option
 ---
+<<set $wait_wait_it_out to false>>
+<<set $wait_not_a_word to false>>
 Lisa: The <color=\#A24384>thought of leaving them</color>.
 Lisa: That's why I can't even <color=\#37946E>speak it into existence</color>.
 Lisa: Do you really think it will be okay?
@@ -347,6 +356,8 @@ Lisa: Do you really think it will be okay?
     <<jump Ending_Let_Them_Know>>
 -><sprite=1> <color=\#A24384>Let's stop and think about this.<<if IsAsk()>>
     Lisa: What's there to think about?
+    //GOES BACK TO ANOTHER CHOICE, POSSIBLE TO SWITCH PATHS
+    <<set $wait_wait_it_out to true>>
     <<jump Wait_It_Out_Option>>
 -> I don't know...
     Lisa: Please, just tell me...
@@ -363,11 +374,15 @@ Lisa: It can't be too bad, right? People do this.
 
 title: Get_Out_Option
 ---
+<<set $wait_not_a_word to false>>
+<<set $wait_wait_it_out to false>>
 Lisa: It's okay to live your life <color=\#A24384>for yourself alone</color>.
 Lisa: It will be better like this and they will <color=\#37946E>forgive me eventually</color>.
 Lisa: Like, I'm not hogging all the wine here. You're just the one who didn't have any.
 -><sprite=2> <color=\#37946E>Wait a second... <<if IsJacob()>>
     Lisa: What?
+    //GOES BACK TO ANOTHER CHOICE, POSSIBLE TO SWITCH PATHS
+    <<set $wait_not_a_word to true>>
     <<jump Not_A_Word_Option>>
 -><sprite=1> <color=\#A24384>Yeah, they'll get it.<<if IsAsk()>>
     <<jump Ending_Keep_The_Secret>>
@@ -389,6 +404,9 @@ Lisa: That's the annoying part.
 Lisa: But everything's annoying like that: living up to yourself... Whatever that means.
 Lisa: But...
 Lisa: I'll make sure to tell them before I go.
+    <<if !visited("Unlocked_Lisa")>>
+        <<jump Unlocked_Lisa>>
+    <<endif>>
 <<endif>>
 ===
 
@@ -402,6 +420,9 @@ Lisa: And it really isn't so difficult.
 Lisa: It's a nice life here; it will be a nice life still.
 Lisa: Besides...
 Lisa: There's still some night to go, right?
+    <<if !visited("Unlocked_Lisa")>>
+        <<jump Unlocked_Lisa>>
+    <<endif>>
 <<endif>>
 
 ===
