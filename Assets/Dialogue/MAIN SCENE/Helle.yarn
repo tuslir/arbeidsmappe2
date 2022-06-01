@@ -55,26 +55,33 @@ title: Helle_Hi
 <<if visited("Helle_Hi") && !IsLisa()>>
     Helle: See you around, okay?
 
-<<elseif IsLisa()>>
+<<elseif visited("Helle_Hi") && IsLisa()>>
 Helle: Hi.
--> <color=\#A22F2f>Helle, right? <<if IsLisa()>>
+-> <color=\#A22F2f>You're Helle. <<if IsLisa()>>
     <<jump Like_Your_Shirt>>
 -> Um, hi. 
     Helle: See you around, okay?
 -> \[Exit conversation.\]
-<<elseif !visited("Helle_Hi") && !IsLisa()>>
-<i>About Helle.
+<<elseif !visited("Helle_Hi")>>
+<i>Leaning against the wall on the far side of the room, her hands are hidden behind her back.</i>
+<i>Here's an observer, like you. Here's a chandelier.</i>
+<i>Her boots give her at least an extra two centimeters of height.</i>
+<i>Say something, say anything.</i>
 Helle: Hi.
+-><sprite=1> <color=\#A24384>Um, hi. <<if IsAsk()>>
+-><sprite=2> <color=\#37946E>Um, hi. <<if IsJacob()>>
 -> Um, hi. 
-    Helle: Hey.
-    -> Hey.
-        Helle: Parrot.
-        -> Um, what?
-            Helle: Nice of Ask to invite you.
-            Helle: Welcome to the light and the love.
-            -> Thank you?
-            -> Um, do I...? Have we...?
-            Helle: See you around, okay?
+Helle: Hey.
+-> Hey.
+Helle: Parrot.
+-> Um, what?
+Helle: Nice of Ask to invite you.
+Helle: Welcome to the light and the love.
+-> Thank you?
+-> Um, do I...? Have we...?
+Helle: See you around, okay?
+-> <color=\#A22F2f>You're Helle. <<if IsLisa()>>
+    <<jump Like_Your_Shirt>>
 -> \[Exit conversation.\]
 <<endif>>
 ===
@@ -627,7 +634,7 @@ Helle: Yeah.
 Helle: I've seen your face before.
 Helle: You're Rebecca.
 Helle: ...
-//LEAVING TOGETHER ENDING
+<<jump The_End>>
 ===
 
 
@@ -638,7 +645,7 @@ Helle: I'm not looking to become a ghost.
 Helle: I'm gonna have a cigarette and then I'm gone.
 Helle: It was nice talking to you, I guess.
 Helle: Give my love to the rest of them.
-//LEAVING ALONE ENDING
+<<jump The_End>>
 ===
 
 title: Ending_Leaving_Together
@@ -652,5 +659,5 @@ Helle: And there are other people, aren't there, Rebecca?
 Helle: A nice name. A nice night.
 Helle: ...
 Helle: Come on. Let's get out of here.
-//LEAVING TOGETHER ENDING.
+<<jump The_End>>
 ===

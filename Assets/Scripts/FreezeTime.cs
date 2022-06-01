@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 
 public class FreezeTime : MonoBehaviour
 {
@@ -24,13 +25,9 @@ public class FreezeTime : MonoBehaviour
     [YarnCommand("show_unlocked")]
     public static void ShowUnlockedAnim(bool showUnlocked = true)
     {
-        Animator _anim = GameObject.FindGameObjectWithTag("UnlockedToken").GetComponent<Animator>();
+        Animator _anim = GameObject.Find("ask_token").GetComponent<Animator>();
 
-        if (_anim.gameObject.GetComponent<Animator>() == null)
-        {
-            return;
-        }
-        else if (showUnlocked)
+        if (showUnlocked)
         {
             _anim.SetBool("show_unlocked", true);
         }
@@ -39,15 +36,42 @@ public class FreezeTime : MonoBehaviour
     [YarnCommand("end_anim")]
     public static void EndUnlockedAnim(bool showUnlocked = false)
     {
-        Animator _anim = GameObject.FindGameObjectWithTag("UnlockedToken").GetComponent<Animator>();
-        
-        if (_anim.gameObject.GetComponent<Animator>() == null)
-        {
-            return;
-        }
-        else if (!showUnlocked)
+        Animator _anim = GameObject.Find("ask_token").GetComponent<Animator>();
+
+        if (!showUnlocked)
         {
             _anim.SetBool("show_unlocked", false);
+        }
+    }
+
+    [YarnCommand("the_end")]
+    public static void TheEndFadeOut(bool theEnd = true)
+    {
+        Animator anim = GameObject.FindGameObjectWithTag("FadeOut").GetComponent<Animator>();
+
+        if (theEnd)
+        {
+            anim.SetBool("fade_out", true);
+        }
+    }
+
+    [YarnCommand("fade_in")]
+    public static void TheEndFadeIn(bool theEnd = true)
+    {
+        Animator anim = GameObject.FindGameObjectWithTag("FadeOut").GetComponent<Animator>();
+
+        if (theEnd)
+        {
+            anim.SetBool("fade_out", false);
+        }
+    }
+
+    [YarnCommand("main_menu")]
+    public static void BackToMainMenu(bool theEnd = true)
+    {
+        if (theEnd)
+        {
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         }
     }
 

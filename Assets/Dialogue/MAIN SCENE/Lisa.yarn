@@ -55,7 +55,7 @@
     <<jump Doing_Good_Option>>
 
 <<elseif visited("Lisa_Start") && !IsJacob()>>
-Lisa: Real cool. Check you later.
+Lisa: Real cool. <color=\#37946E>Check you later</color>.
 
 <<elseif visited("Lisa_Start") && IsJacob()>>
 Lisa: You taking in the <color=\#37946E>sights</color>?
@@ -75,10 +75,11 @@ Lisa: You taking in the <color=\#37946E>sights</color>?
 -><sprite=2> <color=\#37946E>How are you, Lisa? <<if IsJacob()>>
     <<jump Doing_Good>>
 -> I mean, yeah, I'm here.
-Lisa: The thing about walking into a room is owning it. 
-Lisa: That's not just something people talk about... They know these things.
-Lisa: But yeah, it's cool that you're here.
-Lisa: Real cool. Check you later.
+    Lisa: The thing about walking into a room is owning it. 
+    Lisa: That's not just something people talk about... They know these things.
+    Lisa: But yeah, it's cool that you're here.
+    Lisa: Real cool. Check you later.
+-> \[Exit conversation.\]
 <<endif>>
 ===
 

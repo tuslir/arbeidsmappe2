@@ -47,3 +47,56 @@ title: Unlocked_Lisa
 \[You have unlocked <color=\#A22F2f>LISA'S TOKEN</color>.\]
 <<unlock_lisa>>
 ===
+
+title: The_End
+---
+<i>Here is the night, closing in, a buzz.<i>
+<<if visited("Ending_I_Remember_You")>>
+    <<stop_time>>
+    <<the_end>>
+    <i>And here is the girl from the parking lot in front of you.
+    <i>A familiar face, and when she takes your hand it feels the same.
+    <i>Even if it was snowing then, that night.
+    <i>Her fingers shaking, dancing across the screen of your phone. Melted, wet drops, multi-colored.
+    <i>You walked with her for a while after, after she'd stopped crying.
+    <i>In some strange way it was the closer you'd ever felt to anybody.
+    <i>Then you both held your breath and you never spoke about it. You never saw her again.
+    <i>Until tonight.
+    <i>Now she takes your hand and you walk outside.
+    <i>Past the grocery store, the parking lot, the same cone of lights.
+    <i>You kicking the tire of your bike, and her laughter, saying you deserve a medal.
+    <i>Bravery, or something. 
+    <<wait 2>>
+    <<main_menu>>
+
+<<elseif visited("Ending_Leave_Alone")>>
+    <<stop_time>>
+    <<the_end>>
+    <i>And here's Helle collecting her tote bag from the floor.
+    <i>Looking at you like you're the door she has to walk through.
+    <i>You just let her.
+    <i>Some boredom can't be sured, the stuck-to-the-wall kind.
+    <i>She leaves behind a glass, a bottle on the table. You pick it up.   
+    <i>Soon the music will change, an upbeat rhythm. Jacob will ask you to dance, flailing his arms.
+    <i>You will accept.
+    <<wait 2>>
+    <<main_menu>>
+
+<<elseif visited("Ending_Leaving_Together")>>
+    <<stop_time>>
+    <<the_end>>
+    <i>Here is this girl, this wonder.
+    <i>She giggles as she collects her items from the floor.
+    <i>You let her pull you along, the night air hits you cooler now.
+    <i>And there's her, on the handlebars of your bike, laughing as you roll downhill.
+    <i>The place she knows is not a well-kept secret.
+    <i>You climb a hill to overlook the town, orange and white gleaming lights from all corners.
+    <i>And above you only stars.
+    <i>You talk for hours. Holding her hand like the words might be imprinted there.
+    <i>In the morning you walk home, wave goodbye at the intersection.
+    <i>When you turn and look back, she's still there, waving.
+    <<wait 2>>
+    <<main_menu>>
+    
+<<endif>>
+===

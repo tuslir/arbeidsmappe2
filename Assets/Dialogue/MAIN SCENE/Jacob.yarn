@@ -43,7 +43,7 @@ Jacob: I'm Jacob. I love your flannell.
 
 title: Love_That_You_Made_It
 ---
-Jacob: Really love that you made it. Really love to see it.
+Jacob: Really love that you made it. Really <color=\#A24384>love to see it</color>.
 -><sprite=1> <color=\#A24384>I like your look tonight. <<if IsAsk()>>
     <<jump Good_Mood>>
 -> Thanks, Jacob. 
@@ -66,7 +66,7 @@ Jacob: Enjoy yourself, alright?
 
 title: Good_Mood
 ---
-Jacob: The night is beautiful and so am I. Haha!
+Jacob: The night is beautiful and <color=\#A24384>so am I</color>. Haha!
 -><sprite=1> <color=\#A24384>How do you know people here? <<if IsAsk()>>
     <<jump Know_People>>
 -> Alright.
@@ -83,9 +83,9 @@ Jacob: These guys? From all over the place, I guess.
 title: Know_People_Option
 ---
 <<if visited("Know_People_Option")>>
-Jacob: Wondering about any one else? I mean, you've seen the crowd here. 
+Jacob: Wondering about any one else? I mean, you've seen <color=\#A24384>the crowd</color> here. 
 <<else>>
-Jacob: Wondering about any one in particular? I mean, you've seen the crowd here. 
+Jacob: Wondering about any one in particular? I mean, you've seen <color=\#A24384>the crowd</color> here. 
 <<endif>>
 -><sprite=1> <color=\#A24384>What about Helle?<<if IsAsk()>>
     <<jump Know_Helle>>
@@ -119,7 +119,7 @@ Jacob: But not more than you'll like me, haha.
 
 title: Something_Bothering_Me
 ---
-<i>He keeps looking over to the side, to a cellphone resting silent, black, on the arm of a couch.
+<i>He keeps <color=\#A24384>looking over to the side</color>, to a cellphone resting silent, black, on the arm of a couch.
 -><sprite=1> <color=\#A24384>Something bothering you?<<if IsAsk()>>
     <<jump Some_Guy>>
 -> Cool. Thanks, Jacob.
@@ -130,12 +130,12 @@ title: Something_Bothering_Me
 title: Some_Guy
 ---
 Jacob: Huh? No. I'm good, dude! 
-Jacob: It's just. Well. Ugh. There's this guy.
     <<jump Some_Guy_Option>>
 ===
 
 title: Some_Guy_Option
 ---
+Jacob: It's just. Well. Ugh. There's <color=\#A24384>this guy</color>.
 Jacob: I don't know what to do about him.
 -><sprite=1> <color=\#A24384>Is he here? <<if IsAsk()>>
     <<jump Hes_Not_Here>>
@@ -153,7 +153,7 @@ Jacob: No.
 
 title: Hes_Not_Here_Option
 ---
-Jacob: That's the thing.
+Jacob: That's the <color=\#A24384>thing</color>.
 -><sprite=1> <color=\#A24384>What thing? <<if IsAsk()>>
     <<jump My_Stupid_BoyFriend>>
 -> Oh.
@@ -165,7 +165,7 @@ Jacob: That's the thing.
 title: My_Stupid_BoyFriend
 ---
 Jacob: It's Tommy.
-Jacob: My stupid boyfriend.
+Jacob: <color=\#A24384>My stupid boyfriend</color>.
 Jacob: I dunno. I guess we're fighitng?
     <<jump My_Stupid_Boyfriend_Option>>
 ===
@@ -185,8 +185,8 @@ title: Quadruple_Text
 ---
 Jacob: Ding ding ding!
 Jacob: That's the million dollar question.
-Jacob: He was supposed to be here but no one's seen him.
-Jacob: I've quadruple texted him and he still doesn't answer.
+Jacob: He was supposed to be here but <color=\#A24384>no one's seen him</color>.
+Jacob: I've quadruple texted him and <color=\#A24384>he still doesn't answer</color>.
     <<jump Quadruple_Text_Option>>
 ===
 
@@ -211,7 +211,7 @@ Jacob: I mean, maybe?
 
 title: On_His_Way_Option
 ---
-Jacob: It just feels like he's avoiding me, somehow.
+Jacob: It just feels like he's <color=\#A24384>avoiding me</color>, somehow.
 -><sprite=1> <color=\#A24384>Just wait it out. <<if IsAsk()>>
     <<jump Telling_Him>>
 -><sprite=1> <color=\#A24384>Did you apologize for the fight?<<if IsAsk()>>
@@ -232,7 +232,7 @@ Jacob: I've never told anyone this, but...
 
 title: Telling_Him_Option
 ---
-Jacob: I fucking love him.
+Jacob: I fucking <color=\#A24384>love him</color>.
 -><sprite=1> <color=\#A24384>You just told me. Now tell him. <<if IsAsk()>>
     <<jump Ending1_Pre>>
 -><sprite=1> <color=\#A24384>It sounds more like you're annoyed by him.<<if IsAsk()>>
@@ -269,7 +269,7 @@ Jacob: He's so pretty and I go completely silent.
 
 title: To_Apologize_Option
 ---
-Jacob: I keep screwing everything up. 
+Jacob: I keep <color=\#A24384>screwing everything up</color>. 
 -><sprite=1> <color=\#A24384>Just because he's pretty doesn't mean he's worth your time. <<if IsAsk()>>
     <<jump Ending2_Pre>>
 -><sprite=1> <color=\#A24384>Just take a deep breath and be brave.<<if IsAsk()>>
@@ -291,7 +291,7 @@ Jacob: It's pathetic, but...
 
 title: Changed_His_Mind_Option
 ---
-Jacob: I just want to be with him all the time.
+Jacob: I just want to <color=\#A24384>be with him</color> all the time.
 -><sprite=1> <color=\#A24384>He probably wants the same thing. <<if IsAsk()>>
     <<jump Telling_Him>>
 -><sprite=1> <color=\#A24384>Tell him that.<<if IsAsk()>>

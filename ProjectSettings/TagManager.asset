@@ -16,6 +16,7 @@ TagManager:
   - UnlockedToken
   - BoxColliders
   - COVER
+  - FadeOut
   layers:
   - Default
   - TransparentFX

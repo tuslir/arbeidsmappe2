@@ -19,13 +19,28 @@ Ask: You remember everyone?
     -> I'm bad with faces.
     -> I do, I just need a minute.
 Ask: Take your time. Nobody bites.
-<i>DESCRIPTION OF THE ROOM, OF HELLE
+<i>The air is a buzz, a frayed wire.</i>
+<i>Slow beats dripping out a sound system connected to Ask's cellphone.</i>
+<<the_end>>
+<i>Across the room, a girl is looking at you.</i>
+<i>Immediately, there's a sinking feeling.</i>
+<i>Something sweet, a bit heavy, easily recognizable.</i>
+<i>Something that knows something that nobody else knows.</i>
+<i>The girl looks away.</i>
+<<wait 1>>
+...
+<<fade_in>>
+<i>You look away, too.</i>
+Ask: ... and we have a collaborate playlist going if you want to join in.
     -> Who's that girl over there?
 Ask: Who?
+<i>She has a name but you don't know how to speak it.</i>
     -> The one with the striped shirt, worn shoes?
     -> The one with the moon-shaped earrings?
 Ask: Yeah, that's Helle.
     -> She seems... familiar.
+<i>You want to say it but nothing comes out.</i>
+    -> Oh.
 Ask: She reminds me of you, a little bit.
 <<jump About_Helle>>
 <<endif>>
