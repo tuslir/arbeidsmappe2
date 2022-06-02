@@ -252,8 +252,12 @@ Helle: The sky is always cotton candy-pink... It's like a dream.
 
 title: Was_A_Dream
 ---
+Helle: In reality? I'm so bored. I want out.
+Helle: Of this room, of this town. You know?
+Helle: I'm stuck-to-the-wall-bored. Born-in-dust-bored.
+Helle: I'm so tired of this town! The sun that sets! 
 Helle: But, you know, it's probably <color=\#A24384>nothing</color>.
-Helle: Looking <color=\#37946E>inward</color>.
+Helle: Just me, looking <color=\#37946E>inward</color>.
 Helle: That's <color=\#A22F2f>all I see</color>.
 Helle: It was probably a dream.
 -><sprite=1> <color=\#A24384>You really don't remember?<<if IsAsk()>>

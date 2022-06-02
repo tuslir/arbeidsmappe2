@@ -1052,7 +1052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1825229ea729f4a41bc6b60b58f7982f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: []
+  text:
+  - {fileID: 575759247}
   tutorialButton: {fileID: 1498641879}
 --- !u!1 &683544516
 GameObject:
@@ -3544,18 +3545,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 674998785}
-        m_TargetAssemblyTypeName: HideTutorialText, Assembly-CSharp
-        m_MethodName: DisableHints
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1498641882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5308,11 +5297,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 973342556286666662, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
       propertyPath: m_TagString
-      value: UnlockedToken
+      value: LisaToken
       objectReference: {fileID: 0}
     - target: {fileID: 973342556286666664, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
       propertyPath: m_Interactable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 973342556286666664, guid: 6c07154cd6e0c074b8b1ee56f7f121f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
