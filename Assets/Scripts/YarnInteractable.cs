@@ -27,6 +27,8 @@ public class YarnInteractable : MonoBehaviour
     public static bool isCurrentConversation;
 
     GameObject characterView;
+
+    public GameObject tokenButtons;
    
 
     public void Start()

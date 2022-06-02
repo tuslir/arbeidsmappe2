@@ -13,6 +13,8 @@ public class CharacterPortraitScript : MonoBehaviour
 
     SceneSwitch sceneSwitch;
 
+    public GameObject tokenButtons;
+
 
     private void Start()
     {
@@ -28,6 +30,7 @@ public class CharacterPortraitScript : MonoBehaviour
         if (SceneSwitch.inCharacterView)
         {
 
+            tokenButtons.SetActive(false);
 
             for (int i = 0; i < tokens.Length; i++)
             {
@@ -38,6 +41,8 @@ public class CharacterPortraitScript : MonoBehaviour
         }
         else if (SceneSwitch.inSceneView)
         {
+
+            tokenButtons.SetActive(true);
 
                 for (int i = 0; i < tokens.Length; i++)
                 {

@@ -13,6 +13,7 @@
 <i><color=\#A22F2f>to their words,
 <i><color=\#D0A94C>and it might lead you somewhere.
 ...
+<<unlock_ask>>
 \[You have unlocked <color=\#A24384>ASK'S TOKEN</color>.\]
 <<show_unlocked>>
 \[You can switch between tokens by pressing the corresponding button in the lower-right corner.\]
