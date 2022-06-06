@@ -13,7 +13,7 @@ public class CharacterPortraitScript : MonoBehaviour
 
     SceneSwitch sceneSwitch;
 
-    public GameObject tokenButtons;
+    public GameObject tokenCover;
 
 
     private void Start()
@@ -30,7 +30,7 @@ public class CharacterPortraitScript : MonoBehaviour
         if (SceneSwitch.inCharacterView)
         {
 
-            tokenButtons.SetActive(false);
+            tokenCover.SetActive(true);
 
             for (int i = 0; i < tokens.Length; i++)
             {
@@ -42,7 +42,7 @@ public class CharacterPortraitScript : MonoBehaviour
         else if (SceneSwitch.inSceneView)
         {
 
-            tokenButtons.SetActive(true);
+            tokenCover.SetActive(false);
 
                 for (int i = 0; i < tokens.Length; i++)
                 {
